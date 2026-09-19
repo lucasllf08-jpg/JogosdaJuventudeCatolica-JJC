@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos da Juventude Católica (JJC)</title>
+    <meta name="description"
+        content="Jogos da Juventude Católica (JJC) — evento esportivo católico da Paróquia Nossa Senhora Aparecida em Espigão do Oeste, RO. Futsal, Vôlei, Queimada e Jogos de Mesa.">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="cc-root">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="jjc-nav" id="siteNav">
+            <div class="cc-wrap jjc-nav-inner">
+                <a href="index.html" class="jjc-logo">JJC <span>Jogos da Juventude Católica</span></a>
+                <button class="jjc-nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="jjc-nav-links" id="navLinks">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="html/futsal.html">Futsal</a></li>
+                    <li><a href="html/volei.html">Vôlei</a></li>
+                    <li><a href="html/queimada.html">Queimada</a></li>
+                    <li><a href="html/mesa.html">Jogos de Mesa</a></li>
+                    <li><a href="regulamentos.html" class="jjc-nav-cta">Regulamentos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <header class="cc-hero">
+            <div class="cc-hero-img" style="background-image:url('img/logo.jpeg')"></div>
+            <div class="cc-wrap">
+
+                <p class="cc-tag">Paróquia Nossa Senhora Aparecida · Espigão do Oeste, RO</p>
+
+                <h1>Jogos da Juventude Católica</h1>
+
+                <p class="cc-versiculo">
+                    Evangelizar pelo esporte, unir pela fé
+                </p>
+                <p class="cc-versiculo">Dias 20 a 22 de Novembro</p>
+
+                <p>
+                    Futsal · Vôlei · Queimada · Jogos de Mesa
+                </p>
+
+                <div class="cc-hero-actions">
+                    <a href="#modalidades" class="cc-btn cc-btn-primary">Ver modalidades</a>
+                    <a href="#sobre" class="cc-btn cc-btn-ghost">Sobre o JJC</a>
+                </div>
+
+            </div>
+        </header>
+
+
+        <main>
+
+            <!-- SOBRE -->
+            <section id="sobre" class="cc-section">
+                <div class="cc-wrap">
+
+                    <p class="cc-eyebrow">Sobre o evento</p>
+                    <h2>Esporte, fé e comunidade juntos</h2>
+
+                    <p>
+                        Os <strong>Jogos da Juventude Católica (JJC)</strong> são um evento esportivo e comunitário
+                        promovido pela <strong>Paróquia Nossa Senhora Aparecida</strong>, em Espigão do Oeste - RO.
+                        Mais do que competições, o JJC é um espaço de evangelização por meio do esporte, que busca
+                        fortalecer a união entre as comunidades paroquiais e incentivar a participação ativa da
+                        juventude em um ambiente de fé, superação e convivência fraterna.
+                    </p>
+
+                    <p>
+                        Ao longo do evento, jovens e adultos de diferentes comunidades se reúnem em quatro
+                        modalidades esportivas, vivendo momentos de oração, integração e alegria — reafirmando o
+                        esporte como instrumento de evangelização e construção de vínculos entre os fiéis.
+                    </p>
+
+                </div>
+            </section>
+
+            <!-- IDENTIDADE DO EVENTO -->
+            <section class="cc-section" data-identidade>
+                <div class="cc-wrap">
+                    <p class="cc-eyebrow">Participação</p>
+                    <h2 data-identidade-titulo>Um evento católico, para a comunidade católica</h2>
+                    <p data-identidade-texto>Carregando...</p>
+                </div>
+            </section>
+
+            <section class="cc-section">
+                <div class="cc-wrap">
+                    <p class="cc-eyebrow">Falta pouco</p>
+                    <h2>Contagem Regressiva</h2>
+
+                    <div id="contador" data-contador data-alvo="2026-11-20T06:00:00-04:00">
+                        <div class="contador-item">
+                            <h3 data-cd-dias>00</h3>
+                            <span>dias</span>
+                        </div>
+                        <div class="contador-item">
+                            <h3 data-cd-horas>00</h3>
+                            <span>horas</span>
+                        </div>
+                        <div class="contador-item">
+                            <h3 data-cd-min>00</h3>
+                            <span>min</span>
+                        </div>
+                        <div class="contador-item">
+                            <h3 data-cd-seg>00</h3>
+                            <span>seg</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MODALIDADES -->
+            <section id="modalidades" class="cc-section">
+                <div class="cc-wrap">
+
+                    <p class="cc-eyebrow">Modalidades</p>
+                    <h2>Escolha sua modalidade</h2>
+                    <p>Conheça as competições dos Jogos da Juventude Católica e saiba como participar.</p>
+
+                    <!-- Preenchido dinamicamente por script.js a partir de data.js -->
+                    <div class="jjc-modalidades-grid" data-modalidades></div>
+
+                </div>
+            </section>
+
+            <!-- COMO PARTICIPAR -->
+            <section class="cc-section">
+                <div class="cc-wrap">
+
+                    <p class="cc-eyebrow">Participação</p>
+                    <h2>Como participar do JJC</h2>
+                    <p>As inscrições são feitas presencialmente, através dos responsáveis de cada setor/comunidade.</p>
+
+                    <div class="cc-info-grid">
+                        <div>
+                            <h4>1. Escolha a modalidade</h4>
+                            <p>Acesse a página da modalidade desejada e conheça categorias, datas e local.</p>
+                        </div>
+                        <div>
+                            <h4>2. Procure o responsável do seu setor</h4>
+                            <p>A inscrição da equipe é feita presencialmente, com o responsável da sua comunidade.</p>
+                        </div>
+                        <div>
+                            <h4>3. Participe</h4>
+                            <p>Compareça no dia e horário divulgados, vivendo esse momento de fé e esporte com sua
+                                comunidade.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CTA REGULAMENTOS -->
+            <section class="cc-section">
+                <div class="cc-wrap">
+                    <div class="jjc-cta-regulamento">
+                        <p class="cc-eyebrow">Antes de participar</p>
+                        <h2>Confira o Regulamento Oficial</h2>
+                        <p>Regulamento Geral do JJC e o regulamento específico de cada modalidade, com categorias,
+                            limites de atletas e regras de disputa.</p>
+                        <a href="regulamentos.html" class="cc-btn cc-btn-primary">Ver Regulamentos</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTATO -->
+            <section class="cc-section">
+                <div class="cc-wrap">
+
+                    <h2>Ainda com dúvidas?</h2>
+                    <p>Fala com a gente direto no Instagram — respondemos por lá mais rápido que em qualquer outro
+                        canal.</p>
+
+                    <p>
+                        <strong>Paróquia Nossa Senhora Aparecida</strong><br>
+                        Espigão do Oeste - Rondônia
+                    </p>
+
+                    <p>
+                        <a href="https://instagram.com/juventudecatolicaeoe" target="_blank" rel="noopener">@juventudecatolicaeoe</a><br>
+                        
+                    </p>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="cc-section">
+            <div class="cc-wrap">
+                <p>© 2026 - Jogos da Juventude Católica (JJC)</p>
+                <p>Paróquia Nossa Senhora Aparecida — Espigão do Oeste, RO</p>
+                <p>"Evangelizar pelo esporte, unir pela fé."</p>
+            </div>
+        </footer>
+
+    </div>
+
+    
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
