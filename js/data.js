@@ -37,6 +37,7 @@ const JJC_DATA = {
       "https://placehold.co/1200x800/0A3A40/EAF9FA?text=Futsal+JJC",
 
     imagemCard: "../img/futsal.jpg",
+    regulamento: "Categorias, limite de atletas e critérios de disputa no JJC.",
 
     // Inscrição agora é feita direto no site, pré-selecionando a modalidade
     regulamentoPdf: "../pdf/regulamento_futsal.pdf",
@@ -108,6 +109,7 @@ const JJC_DATA = {
       "https://placehold.co/1200x800/0A3A40/EAF9FA?text=V%C3%B4lei+JJC",
 
     imagemCard: "../img/volei.jpg",
+    regulamento: "Categorias, limite de atletas e critérios de disputa no JJC.",
 
     regulamentoPdf: "../pdf/regulamento_volei.pdf",
 
@@ -174,6 +176,7 @@ const JJC_DATA = {
       "https://placehold.co/1200x800/0A3A40/EAF9FA?text=Queimada+JJC",
 
     imagemCard: "../img/queimada.jpg",
+    regulamento: "Categorias, limite de atletas e critérios de disputa no JJC.",
 
     regulamentoPdf: "../pdf/regulamento_queimada.pdf",
 
@@ -236,6 +239,7 @@ const JJC_DATA = {
       "https://placehold.co/1200x800/0A3A40/EAF9FA?text=Jogos+de+Mesa+JJC",
 
     imagemCard: "../img/mesa.png",
+    regulamento: "Categorias, limite de atletas e critérios de disputa no JJC.",
 
     regulamentoPdf: "../pdf/regulamento_jogos_mesa.pdf",
 
