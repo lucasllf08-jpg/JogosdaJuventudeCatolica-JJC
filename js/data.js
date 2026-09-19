@@ -39,7 +39,7 @@ const JJC_DATA = {
     imagemCard: "../img/futsal.jpg",
 
     // Inscrição agora é feita direto no site, pré-selecionando a modalidade
-    regulamentoPdf: "../docs/regulamento-futsal.pdf",
+    regulamentoPdf: "../pdf/regulamento_futsal.pdf",
 
     limiteAtletas: 8,
 
@@ -109,7 +109,7 @@ const JJC_DATA = {
 
     imagemCard: "../img/volei.jpg",
 
-    regulamentoPdf: "../docs/regulamento-volei.pdf",
+    regulamentoPdf: "../pdf/regulamento_volei.pdf",
 
     // O limite de atletas muda por categoria neste esporte — veja
     // "limitesPorCategoria" abaixo. O campo geral fica como referência.
@@ -175,7 +175,7 @@ const JJC_DATA = {
 
     imagemCard: "../img/queimada.jpg",
 
-    regulamentoPdf: "../docs/regulamento-queimada.pdf",
+    regulamentoPdf: "../pdf/regulamento_queimada.pdf",
 
     limiteAtletas: 12,
 
@@ -237,7 +237,7 @@ const JJC_DATA = {
 
     imagemCard: "../img/mesa.png",
 
-    regulamentoPdf: "../docs/regulamento-mesa.pdf",
+    regulamentoPdf: "../pdf/regulamento_jogos_mesa.pdf",
 
     limiteAtletas: null, // ainda não definido
 
