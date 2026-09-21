@@ -317,53 +317,58 @@ function renderPaginaModalidade() {
    equipe.html?modalidade=futsal&id=futsal-leoes-de-juda
    ================================================================== */
 function renderPaginaEquipe() {
-  const root = document.querySelector("[data-pagina-equipe]");
-  if (!root || typeof JJC_DATA === "undefined") return;
+    const container = document.querySelector("[data-pagina-equipe]");
 
-  const params = new URLSearchParams(window.location.search);
-  const modalidadeSlug = params.get("modalidade");
-  const equipeId = params.get("id");
+    if (!container || typeof JJC_EQUIPE === "undefined") return;
 
-  const mod = JJC_DATA[modalidadeSlug];
-  const equipe = mod?.equipes.find(e => e.id === equipeId);
+    container.innerHTML = `
+        <div class="jjc-section-head">
+            <h2>Coordenação Geral</h2>
 
-  const estadoVazio = document.querySelector("[data-equipe-nao-encontrada]");
-  const conteudo = document.querySelector("[data-equipe-conteudo]");
+            <p>
+                Responsáveis pelo planejamento, organização e
+                acompanhamento geral dos Jogos da Juventude Católica.
+            </p>
+        </div>
 
-  if (!mod || !equipe) {
-    if (estadoVazio) estadoVazio.hidden = false;
-    if (conteudo) conteudo.hidden = true;
-    return;
-  }
+        <div class="jjc-equipe-grid">
+            ${JJC_EQUIPE.map((pessoa) => `
+                <article class="jjc-equipe-card">
 
-  if (estadoVazio) estadoVazio.hidden = true;
-  if (conteudo) conteudo.hidden = false;
+                    <div class="jjc-equipe-foto">
+                        <img
+                            src="${pessoa.foto}"
+                            alt="Foto de ${pessoa.nome}"
+                        >
+                    </div>
 
-  setText("[data-equipe-nome]", equipe.nome);
-  setText("[data-equipe-comunidade]", equipe.comunidade);
-  setText("[data-equipe-capitao]", equipe.capitao);
-  setText("[data-equipe-vice]", equipe.vice || "Não informado");
-  setText("[data-equipe-tecnico]", equipe.tecnico || "Não informado");
-  setText("[data-equipe-modalidade]", mod.nome);
-  setText("[data-equipe-info]", equipe.infoAdicional || "Sem informações adicionais no momento.");
-  setAttr("[data-equipe-foto]", "src", equipe.foto);
-  setAttr("[data-equipe-foto]", "alt", `Foto da equipe ${equipe.nome}`);
-  setAttr("[data-equipe-escudo]", "src", equipe.escudo);
-  setAttr("[data-equipe-escudo]", "alt", `Escudo da equipe ${equipe.nome}`);
-  setAttr("[data-equipe-voltar]", "href", `${mod.slug}.html`);
+                    <div class="jjc-equipe-content">
 
-  const atletasContainer = document.querySelector("[data-equipe-atletas]");
-  if (atletasContainer) {
-    atletasContainer.innerHTML = equipe.atletas.map(a => `
-      <tr>
-        <td>${a.nome}</td>
-        <td>${a.numero}</td>
-        <td>${a.posicao}</td>
-      </tr>
-    `).join("");
-  }
+                        <span class="jjc-equipe-area">
+                            ${pessoa.area}
+                        </span>
 
-  document.title = `${equipe.nome} · ${mod.nome} · JJC`;
+                        <h3>${pessoa.nome}</h3>
+
+                        <a
+                            href="https://wa.me/${pessoa.telefone}"
+                            target="_blank"
+                            rel="noopener"
+                            class="jjc-whatsapp"
+                        >
+                            WhatsApp
+                        </a>
+
+                        <p>
+                            ${pessoa.descricao}
+                        </p>
+
+                    </div>
+
+                </article>
+            `).join("")}
+        </div>
+    `;
 }
 
 

@@ -356,17 +356,17 @@ const JJC_REPRESENTANTES = [
             {
                 nome: "Marlon",
                 telefone: "6992945547",
-                foto: "img/representantes/marlon.jpg"
+                foto: "../img/representantes/marlon.jpg"
             },
             {
                 nome: "Hélio",
                 telefone: "69992135146",
-                foto: "img/representantes/helio.jpg"
+                foto: "../img/representantes/helio.jpg"
             },
             {
                 nome: "Marciano",
                 telefone: "6993408499",
-                foto: "img/representantes/marciano.jpg"
+                foto: "../img/representantes/marciano.jpg"
             }
         ]
     },
@@ -421,17 +421,17 @@ const JJC_REPRESENTANTES = [
             {
                 nome: "Rodrigo",
                 telefone: "69992958122",
-                foto: "img/representantes/rodrigo.jpg"
+                foto: "../img/representantes/rodrigo.jpg"
             },
             {
                 nome: "Carlos",
                 telefone: "69992781330",
-                foto: "img/representantes/carlos.jpg"
+                foto: "../img/representantes/carlos.jpg"
             },
             {
                 nome: "Deleon",
                 telefone: "69993731666",
-                foto: "img/representantes/deleon.jpg"
+                foto: "../img/representantes/deleon.jpg"
             }
         ]
     },
@@ -469,6 +469,35 @@ const JJC_REPRESENTANTES = [
     }
 ];
 
+const JJC_EQUIPE = [
+    {
+        area: "Coordenação Geral",
+        nome: "Ludmila",
+        telefone: "6992977522",
+        foto: "../img/equipe/ludmila.jpg",
+        descricao:
+            "Responsável pela coordenação geral dos Jogos da Juventude Católica, acompanhando o planejamento e a organização do evento."
+    },
+
+    {
+        area: "Coordenação Geral",
+        nome: "Arthur Teodoro",
+        telefone: "6993404617",
+        foto: "../img/equipe/arthur.jpg",
+        descricao:
+            "Atua na organização e no acompanhamento das atividades do JJC, auxiliando na realização do evento."
+    },
+
+    {
+        area: "Coordenação Geral",
+        nome: "Carlos Eduardo",
+        telefone: "6992579103",
+        foto: "../img/equipe/carlos-eduardo.jpg",
+        descricao:
+            "Participa da coordenação e organização geral do JJC, contribuindo para o planejamento e mídia do evento."
+    }
+];
+
 /* ==================================================================
    INFORMAÇÕES GERAIS DO EVENTO
    ------------------------------------------------------------------
@@ -500,5 +529,10 @@ const JJC_INFO = {
    ================================================================== */
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { JJC_DATA, JJC_INFO };
+  module.exports = {
+    JJC_DATA,
+    JJC_INFO,
+    JJC_REPRESENTANTES,
+    JJC_EQUIPE
+};
 }
