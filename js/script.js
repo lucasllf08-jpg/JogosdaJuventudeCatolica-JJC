@@ -351,7 +351,7 @@ function renderPaginaEquipe() {
                         <h3>${pessoa.nome}</h3>
 
                         <a
-                            href="https://wa.me/${pessoa.telefone}"
+                            href="https://wa.me/55${pessoa.telefone}"
                             target="_blank"
                             rel="noopener"
                             class="jjc-whatsapp"
