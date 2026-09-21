@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPaginaModalidade();
   renderPaginaEquipe();
   renderPaginaRegulamentos();
+  renderPaginaRepresentantes();
 });
 
 
@@ -402,6 +403,73 @@ function renderPaginaRegulamentos() {
   `).join("");
 }
 
+/* ==================================================================
+   7. PÁGINA DE REPRESENTANTES
+   ================================================================== */
+
+function renderPaginaRepresentantes() {
+  const root = document.querySelector("[data-pagina-representantes]");
+
+  if (!root || typeof JJC_REPRESENTANTES === "undefined") return;
+
+  const container = document.querySelector("[data-representantes]");
+
+  if (!container) return;
+
+  if (!JJC_REPRESENTANTES.length) {
+    container.innerHTML = `
+      <p class="cc-note">
+        Nenhum representante cadastrado no momento.
+      </p>
+    `;
+    return;
+  }
+
+  container.innerHTML = JJC_REPRESENTANTES.map(setor => `
+    <div class="jjc-setor-representantes">
+
+      <div class="jjc-setor-header">
+        <p class="cc-eyebrow">Setor</p>
+        <h2>${setor.setor}</h2>
+      </div>
+
+      <div class="jjc-representantes-grid">
+
+        ${setor.pessoas.map(pessoa => `
+          <article class="jjc-representante-card">
+
+            <img
+              src="${pessoa.foto}"
+              alt="Foto de ${pessoa.nome}"
+              class="jjc-representante-foto"
+            >
+
+            <div class="jjc-representante-info">
+
+              <h3>${pessoa.nome}</h3>
+
+              <a
+                href="https://wa.me/55${pessoa.telefone}"
+                target="_blank"
+                rel="noopener"
+                class="jjc-whatsapp"
+              >
+                WhatsApp
+              </a>
+
+            </div>
+
+          </article>
+        `).join("")}
+
+      </div>
+
+    </div>
+  `).join("");
+
+  document.title =
+    "Representantes · Jogos da Juventude Católica (JJC)";
+}
 
 /* ==================================================================
    UTILITÁRIOS

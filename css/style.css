@@ -1460,3 +1460,133 @@ footer p{
 .jjc-cta-regulamento .cc-btn{
     margin-top:10px;
 }
+
+/* ==========================================================
+   REPRESENTANTES
+   ========================================================== */
+
+.jjc-setor-representantes {
+    margin-top: 20px;
+    padding: 40px 0;
+}
+
+.jjc-setor-representantes + .jjc-setor-representantes {
+    border-top: 1px solid var(--border);
+}
+
+.jjc-setor-header {
+    margin-bottom: 28px;
+}
+
+.jjc-setor-header h2 {
+    margin-top: 8px;
+}
+
+.jjc-representantes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.jjc-representante-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+
+    text-align: center;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.jjc-representante-card:hover {
+    transform: translateY(-6px);
+    background: var(--surface-hover);
+    border-color: var(--secondary);
+    box-shadow: var(--shadow-hover);
+}
+
+.jjc-representante-foto {
+    display: block;
+
+    width: 120px;
+    height: 120px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid var(--secondary);
+
+    background: var(--bg-alt);
+}
+
+.jjc-representante-info h3 {
+    margin: 0 0 18px;
+
+    color: var(--text);
+
+    font-size: 1.15rem;
+}
+
+.jjc-whatsapp {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    background: var(--secondary);
+    color: var(--primary-dark);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+.jjc-whatsapp:hover {
+    background: var(--secondary-light);
+    color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .jjc-representantes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .jjc-representantes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jjc-setor-representantes {
+        padding: 30px 0;
+    }
+
+}

@@ -54,12 +54,10 @@ const JJC_DATA = {
     },
 
     categorias: [
-      "Infantil Masculino",
-      "Infantil Feminino",
-      "Juvenil Masculino",
-      "Juvenil Feminino",
-      "Adulto Masculino",
-      "Adulto Feminino"
+      "Infantil Masculino (10 a 14 anos)",
+      "Juvenil Masculino (15 a 17 anos)",
+      "Adulto Masculino (Mais de 18 anos)",
+      "Adulto Feminino (Mais de 17 anos)"
     ],
 
     programacao: [
@@ -292,6 +290,184 @@ const JJC_DATA = {
   }
 };
 
+const JJC_REPRESENTANTES = [
+
+  {
+        setor: "Setor 1 — Matriz e São Francisco",
+        pessoas: [
+            {
+                nome: "Bruno Basílio",
+                telefone: "6984879224",
+                foto: "../img/representantes/bruno-basilio.jpg"
+            },
+            {
+                nome: "Felipe",
+                telefone: "6992813728",
+                foto: "../img/representantes/felipe.jpg"
+            },
+            {
+                nome: "Aristeu",
+                telefone: "6984663285",
+                foto: "../img/representantes/aristeu.jpg"
+            }
+        ]
+    },
+    
+    {
+        setor: "Setor 2 — São Camilo e São Pedro",
+        pessoas: [
+            {
+                nome: "Anadeise",
+                telefone: "69984574824",
+                foto: "../img/representantes/anadeise.jpg"
+            },
+            {
+                nome: "Wanner",
+                telefone: "69984214435",
+                foto: "../img/representantes/wanner.jpg"
+            }
+        ]
+    },
+    
+    {
+        setor: "Setor 3 — São José, Sagrada e Nazaré",
+        pessoas: [
+            {
+                nome: "Joares",
+                telefone: "69984713318",
+                foto: "../img/representantes/joares.jpg"
+            },
+            {
+                nome: "Gislaine",
+                telefone: "69999540559",
+                foto: "../img/representantes/gislaine.jpg"
+            },
+            {
+                nome: "Luiz",
+                telefone: "69992093486",
+                foto: "../img/representantes/luiz.jpg"
+            }
+        ]
+    },
+
+    {
+        setor: "Rio Preto, PA e Seringal",
+        pessoas: [
+            {
+                nome: "Marlon",
+                telefone: "6992945547",
+                foto: "img/representantes/marlon.jpg"
+            },
+            {
+                nome: "Hélio",
+                telefone: "69992135146",
+                foto: "img/representantes/helio.jpg"
+            },
+            {
+                nome: "Marciano",
+                telefone: "6993408499",
+                foto: "img/representantes/marciano.jpg"
+            }
+        ]
+    },
+
+    {
+        setor: "Bradesco, São Roque, Rei Davi e Linha 15",
+        pessoas: [
+            {
+                nome: "Simone",
+                telefone: "69992057798",
+                foto: "../img/representantes/simone.jpg"
+            },
+            {
+                nome: "Márcia Giroto",
+                telefone: "69999599924",
+                foto: "../img/representantes/marcia-giroto.jpg"
+            },
+            {
+                nome: "Bruno",
+                telefone: "6999926759",
+                foto: "../img/representantes/bruno.jpg"
+            }
+        ]
+    },
+
+    {
+        setor: "Linha São Paulo, Nova Esperança  e São Sebastião",
+        pessoas: [
+            {
+                nome: "Gustavo Valle",
+                telefone: "6999529913",
+                foto: "../img/representantes/gustavo-valle.jpg"
+            },
+            {
+                nome: "Lucas Gotardo",
+                telefone: "6993582849",
+                foto: "../img/representantes/lucas-gotardo.jpg"
+            },
+            {
+                nome: "Irineu",
+                telefone: "69984992889",
+                foto: "../img/representantes/irineu.jpg"
+            }
+        ]
+    },
+
+    
+
+    {
+        setor: "Pacarana",
+        pessoas: [
+            {
+                nome: "Rodrigo",
+                telefone: "69992958122",
+                foto: "img/representantes/rodrigo.jpg"
+            },
+            {
+                nome: "Carlos",
+                telefone: "69992781330",
+                foto: "img/representantes/carlos.jpg"
+            },
+            {
+                nome: "Deleon",
+                telefone: "69993731666",
+                foto: "img/representantes/deleon.jpg"
+            }
+        ]
+    },
+
+    {
+        setor: "14 de Abril e Canelinha",
+        pessoas: [
+            {
+                nome: "Marcelo",
+                telefone: "69993673498",
+                foto: "../img/representantes/marcelo.jpg"
+            },
+            {
+                nome: "Joel",
+                telefone: "699928333223",
+                foto: "../img/representantes/joel.jpg"
+            }
+        ]
+    },
+
+    {
+        setor: "Ribeirão",
+        pessoas: [
+            {
+                nome: "Gilmar",
+                telefone: "69984586675",
+                foto: "../img/representantes/gilmar.jpg"
+            },
+            {
+                nome: "Elaine",
+                telefone: "69984516621",
+                foto: "../img/representantes/elaine.jpg"
+            }
+        ]
+    }
+];
 
 /* ==================================================================
    INFORMAÇÕES GERAIS DO EVENTO
