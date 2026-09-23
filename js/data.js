@@ -472,7 +472,7 @@ const JJC_REPRESENTANTES = [
 const JJC_EQUIPE = [
     {
         area: "Coordenação Geral",
-        nome: "Ludmila",
+        nome: "Ludymila",
         telefone: "6992977522",
         foto: "../img/equipe/ludmila.jpg",
         descricao:
