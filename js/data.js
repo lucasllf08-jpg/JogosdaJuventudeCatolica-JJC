@@ -495,7 +495,15 @@ const JJC_EQUIPE = [
         foto: "../img/equipe/carlos-eduardo.jpg",
         descricao:
             "Participa da coordenação e organização geral do JJC, contribuindo para o planejamento e mídia do evento."
-    }
+    },
+{
+    area: "Coordenação Geral",
+    nome: "Ana Clara",
+    telefone: "6984953993",
+    foto: "../img/equipe/anaclara.jpg",
+    descricao:
+        "Responsável pelo apoio à coordenação geral dos Jogos da Juventude Católica, contribuindo para o planejamento, a organização e o desenvolvimento do evento."
+}
 ];
 
 /* ==================================================================
