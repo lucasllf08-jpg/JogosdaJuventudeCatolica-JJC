@@ -446,7 +446,7 @@ const JJC_REPRESENTANTES = [
             },
             {
                 nome: "Joel",
-                telefone: "699928333223",
+                telefone: "6992833223",
                 foto: "../img/representantes/joel.jpg"
             }
         ]
