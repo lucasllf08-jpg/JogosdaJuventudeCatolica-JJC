@@ -45,7 +45,7 @@ const JJC_DATA = {
     limiteAtletas: 8,
 
     sobre:
-      "O Futsal é uma das modalidades mais tradicionais dos Jogos da Juventude Católica (JJC), reunindo equipes formadas pelas comunidades da Paróquia Nossa Senhora Aparecida. O JJC é um evento fechado, destinado exclusivamente à comunidade católica, e o Futsal reforça esse propósito por meio da convivência, da evangelização e do fortalecimento dos laços entre os jovens e adultos participantes. Cada equipe pode ter no máximo 8 atletas.",
+      "O Futsal é uma das modalidades mais tradicionais dos Jogos da Juventude Católica (JJC), reunindo equipes formadas pelas comunidades da Paróquia Nossa Senhora Aparecida. O JJC é um evento fechado, destinado exclusivamente à comunidade católica, e o Futsal reforça esse propósito por meio da convivência, da evangelização e do fortalecimento dos laços entre os jovens e adultos participantes. Cada equipe pode ter no mínimo 5 e no máximo 8 atletas.",
 
     infoGerais: {
       data: "20 a 22 de novembro de 2026",
@@ -85,7 +85,7 @@ const JJC_DATA = {
       {
         pergunta: "Quantos atletas por equipe?",
         resposta:
-          "Cada equipe pode ter no máximo 8 atletas, entre titulares e reservas."
+          "Cada equipe pode ter no mínimo 5 e no máximo 8 atletas, entre titulares e reservas."
       },
       {
         pergunta: "Como faço a inscrição da minha equipe?",
@@ -120,7 +120,7 @@ const JJC_DATA = {
     },
 
     sobre:
-      "O Vôlei nos Jogos da Juventude Católica (JJC) reúne equipes das comunidades da Paróquia Nossa Senhora Aparecida. A modalidade feminina será disputada em quadra (até 8 atletas por equipe) e a masculina em areia (até 6 atletas por equipe). Assim como as demais modalidades do JJC, a participação é exclusiva para a comunidade católica.",
+      "O Vôlei nos Jogos da Juventude Católica (JJC) reúne equipes das comunidades da Paróquia Nossa Senhora Aparecida. A modalidade feminina será disputada em quadra (no mínimo 6 e até 8 atletas.) e a masculina em areia (no mínimo 4 e até 6 atletas.). Assim como as demais modalidades do JJC, a participação é exclusiva para a comunidade católica.",
 
     infoGerais: {
       data: "20 a 22 de novembro de 2026",
@@ -129,8 +129,10 @@ const JJC_DATA = {
     },
 
     categorias: [
-      "Feminino - Quadra",
-      "Masculino - Areia"
+      "Feminino - Juvenil (13 a 17 anos",
+      "Feminino - Adulto +18",
+      "Masculino - Juvenil (13 a 17 anos)",
+      "Masculino - Adulto +18"
     ],
 
     programacao: [
@@ -156,7 +158,7 @@ const JJC_DATA = {
       },
       {
         pergunta: "Quantos atletas por equipe?",
-        resposta: "Feminino (quadra): até 8 atletas. Masculino (areia): até 6 atletas."
+        resposta: "Feminino (quadra): no mínimo 6 e até 8 atletas. Masculino (areia): no mínimo 4 até 6 atletas."
       }
     ],
 
@@ -181,7 +183,7 @@ const JJC_DATA = {
     limiteAtletas: 12,
 
     sobre:
-      "A Queimada é uma das modalidades mais animadas dos Jogos da Juventude Católica (JJC), reunindo equipes mistas das comunidades da Paróquia Nossa Senhora Aparecida em partidas descontraídas, com no máximo 12 atletas por equipe. A divisão entre categorias Infantil e Adulto ainda está sendo confirmada pela organização.",
+      "A Queimada é uma das modalidades mais animadas dos Jogos da Juventude Católica (JJC), reunindo equipes mistas das comunidades da Paróquia Nossa Senhora Aparecida em partidas descontraídas, com no máximo 12 atletas por equipe. Para que a modalidade seja realmente mista, o ideal é que as equipes sejam formadas por, no mínimo, 5 mulheres e 7 homens. Sabemos que algumas localidades podem ter dificuladades para completar essa divisão, e nesses casos haverá compreensão. Porém, nosso intuito é incentivar a participação equilibrada.",
 
     infoGerais: {
       data: "20 a 22 de novembro de 2026",
@@ -190,7 +192,9 @@ const JJC_DATA = {
     },
 
     categorias: [
-      "Misto"
+      "Infantil - 10 a 14 anos",
+      "Juvenil - 15 a 17 anos",
+      "Adulto - 18+"
     ],
 
     programacao: [
@@ -244,7 +248,7 @@ const JJC_DATA = {
     limiteAtletas: null, // ainda não definido
 
     sobre:
-      "Os Jogos de Mesa fazem parte dos Jogos da Juventude Católica (JJC), reunindo participantes em disputas de Tênis de Mesa e Pebolim. As categorias (Masculino, Feminino e Infantil) ainda estão sendo organizadas pela coordenação. A modalidade proporciona momentos de diversão, concentração, estratégia e convivência entre os jovens da comunidade católica da Paróquia Nossa Senhora Aparecida.",
+      "Os Jogos de Mesa fazem parte dos Jogos da Juventude Católica (JJC), reunindo participantes em disputas de Tênis de Mesa e Pebolim.A participação no Tênis de Mesa é individual e no pebolim devem ser formadas esquipes de 2 atletas (Cada comunidade pode ter mais de um atleta ou equipe). A modalidade proporciona momentos de diversão, concentração, estratégia e convivência entre os jovens da comunidade católica da Paróquia Nossa Senhora Aparecida.",
 
     infoGerais: {
       data: "20 a 22 de novembro de 2026",
@@ -253,8 +257,9 @@ const JJC_DATA = {
     },
 
     categorias: [
-      "Tênis de Mesa",
-      "Pebolim"
+      "Infantil - 10 a 14 anos",
+      "Juvenil - 15 a 17 anos",
+      "Adulto - +18"
     ],
 
     programacao: [
@@ -279,8 +284,8 @@ const JJC_DATA = {
         resposta: "Tênis de Mesa e Pebolim."
       },
       {
-        pergunta: "As categorias já estão definidas?",
-        resposta: "A organização está trabalhando com a proposta de categorias Masculino, Feminino e Infantil, mas isso ainda será confirmado e atualizado aqui."
+        pergunta: "Quantos atletas por equipe?",
+        resposta: "A participação no Tênis de Mesa é individual e no pebolim devem ser formadas esquipes de 2 atletas (Cada comunidade pode ter mais de um atleta ou equipe)."
       },
       {
         pergunta: "Como faço minha inscrição?",
