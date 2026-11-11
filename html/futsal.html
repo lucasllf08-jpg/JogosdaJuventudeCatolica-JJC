@@ -33,7 +33,7 @@
                     <li><a href="queimada.html">Queimada</a></li>
                     <li><a href="mesa.html">Jogos de Mesa</a></li>
                     <li><a href="representantes.html">Inscrição</a></li>
-                     <li><a href="equipe.html" class="active">Equipe JJC</a></li>
+                    <li><a href="equipe.html" class="active">Equipe JJC</a></li>
                     <li><a href="../regulamentos.html" class="jjc-nav-cta">Regulamentos</a></li>
                 </ul>
             </div>
@@ -61,75 +61,120 @@
 
         <main>
 
-            <!-- SOBRE A MODALIDADE -->
-            <section id="sobre" class="cc-section">
+            <!-- ABAS DA MODALIDADE -->
+            <!-- NAVEGAÇÃO DAS ABAS -->
+            <section class="cc-section" style="padding-bottom: 30px;">
                 <div class="cc-wrap">
-                    <p class="cc-eyebrow">Sobre a modalidade</p>
-                    <h2>Futsal nos Jogos da Juventude Católica</h2>
-                    <p data-mod-sobre>Carregando...</p>
+                    <p class="cc-eyebrow">Explore a modalidade</p>
+                    <h2>Conheça as equipes participantes</h2>
+                    <p>
+                        Quer conhecer as equipes que estarão em quadra nos Jogos da Juventude Católica?
+                        Acesse a aba Equipes e confira os times inscritos no Futsal, organizados por faixa etária.
+                    </p>
                 </div>
-            </section>
 
-            <!-- INFORMAÇÕES GERAIS -->
-            <section class="cc-section">
-                <div class="cc-wrap">
-                    <p class="cc-eyebrow">Informações gerais</p>
-                    <h2>Quando e onde acontece</h2>
+                <div class="jjc-tabs" id="abas-modalidade">
+                    <div class="cc-wrap jjc-tabs-inner" role="tablist" aria-label="Seções de Futsal">
 
-                    <div class="jjc-info-cards">
-                        <div class="jjc-info-card">
-                            <p class="cc-eyebrow">Data</p>
-                            <p data-mod-data>—</p>
-                        </div>
-                        <div class="jjc-info-card">
-                            <p class="cc-eyebrow">Horário</p>
-                            <p data-mod-horario>—</p>
-                        </div>
-                        <div class="jjc-info-card">
-                            <p class="cc-eyebrow">Local</p>
-                            <p data-mod-local>—</p>
-                        </div>
-                        
+                        <button type="button" class="jjc-tab active" role="tab" data-tab="info" aria-selected="true">
+                            Informações
+                        </button>
+
+                        <button type="button" class="jjc-tab" role="tab" data-tab="equipes" aria-selected="false">
+                            Equipes
+                        </button>
+
                     </div>
                 </div>
             </section>
 
-            <!-- CATEGORIAS -->
-            <section class="cc-section">
-                <div class="cc-wrap">
-                    <p class="cc-eyebrow">Categorias</p>
-                    <h2>Categorias de disputa</h2>
-                    <p>Confira as categorias oficiais da modalidade Futsal no JJC.</p>
+            <!-- ABA: INFORMAÇÕES -->
+            <div data-tab-painel="info">
 
-                    <ul class="jjc-categorias-lista" data-mod-categorias-lista></ul>
-                </div>
-            </section>
+                <!-- SOBRE A MODALIDADE -->
+                <section id="sobre" class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Sobre a modalidade</p>
+                        <h2>Futsal nos Jogos da Juventude Católica</h2>
+                        <p data-mod-sobre>Carregando...</p>
+                    </div>
+                </section>
 
-            <!-- PROGRAMAÇÃO -->
-            <section class="cc-section">
-                <div class="cc-wrap">
-                    <p class="cc-eyebrow">Programação</p>
-                    <h2>Cronograma da modalidade</h2>
-                    <p>Confira os horários oficiais de Futsal nos Jogos da Juventude Católica.</p>
+                <!-- INFORMAÇÕES GERAIS -->
+                <section class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Informações gerais</p>
+                        <h2>Quando e onde acontece</h2>
 
-                    <ol class="cc-schedule-list" data-mod-programacao></ol>
+                        <div class="jjc-info-cards">
+                            <div class="jjc-info-card">
+                                <p class="cc-eyebrow">Data</p>
+                                <p data-mod-data>—</p>
+                            </div>
+                            <div class="jjc-info-card">
+                                <p class="cc-eyebrow">Horário</p>
+                                <p data-mod-horario>—</p>
+                            </div>
+                            <div class="jjc-info-card">
+                                <p class="cc-eyebrow">Local</p>
+                                <p data-mod-local>—</p>
+                            </div>
 
-                    <p class="cc-note">
-                        ⚠️ O cronograma poderá sofrer alterações até o momento da realização do evento.
-                        Acompanhe nossos canais oficiais para qualquer atualização.
-                    </p>
-                </div>
-            </section>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- FAQ -->
-            <section class="cc-section">
-                <div class="cc-wrap">
-                    <p class="cc-eyebrow">Perguntas frequentes</p>
-                    <h2>Dúvidas sobre Futsal</h2>
+                <!-- CATEGORIAS -->
+                <section class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Categorias</p>
+                        <h2>Categorias de disputa</h2>
+                        <p>Confira as categorias oficiais da modalidade Futsal no JJC.</p>
 
-                    <div data-mod-faq></div>
-                </div>
-            </section>
+                        <ul class="jjc-categorias-lista" data-mod-categorias-lista></ul>
+                    </div>
+                </section>
+
+                <!-- PROGRAMAÇÃO -->
+                <section class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Programação</p>
+                        <h2>Cronograma da modalidade</h2>
+                        <p>Confira os horários oficiais de Futsal nos Jogos da Juventude Católica.</p>
+
+                        <ol class="cc-schedule-list" data-mod-programacao></ol>
+
+                        <p class="cc-note">
+                            ⚠️ O cronograma poderá sofrer alterações até o momento da realização do evento.
+                            Acompanhe nossos canais oficiais para qualquer atualização.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Perguntas frequentes</p>
+                        <h2>Dúvidas sobre Futsal</h2>
+
+                        <div data-mod-faq></div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- ABA: EQUIPES -->
+            <div data-tab-painel="equipes" id="equipes" hidden>
+                <section class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Equipes</p>
+                        <h2>Equipes de Futsal</h2>
+                        <p>Escolha uma faixa etária para ver as equipes inscritas.</p>
+
+                        <div class="jjc-faixas-grid" data-mod-faixas></div>
+                    </div>
+                </section>
+            </div>
 
             <!-- CONTATO -->
             <section class="cc-section">
@@ -145,8 +190,9 @@
                     </p>
 
                     <p>
-                        <a href="https://instagram.com/juventudecatolicaeoe" target="_blank" rel="noopener">@juventudecatolicaeoe</a><br>
-                        
+                        <a href="https://instagram.com/juventudecatolicaeoe" target="_blank"
+                            rel="noopener">@juventudecatolicaeoe</a><br>
+
                     </p>
 
                 </div>
@@ -167,6 +213,7 @@
 
 
     <script src="../js/data.js"></script>
+    <script src="../js/equipes-data.js"></script>
     <script src="../js/script.js"></script>
 </body>
 

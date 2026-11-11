@@ -11,6 +11,9 @@
                      premiação, equipes, FAQ)
    5. EQUIPE      -> monta a página de uma equipe a partir da URL
                      (?modalidade=futsal&id=futsal-leoes-de-juda)
+   8. ABA EQUIPES -> abas "Informações | Equipes" das modalidades, cards
+                     de faixa etária e página times.html (equipes por
+                     faixa), a partir de js/equipes-data.js
 
    Cada módulo só executa se encontrar os elementos correspondentes
    na página atual, então este mesmo arquivo pode ser incluído em
@@ -23,6 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderModalidadesHome();
   renderInfoGeralHome();
   renderPaginaModalidade();
+  initAbasModalidade();
+  renderAbaEquipes();
+  renderPaginaTimes();
   renderPaginaEquipe();
   renderPaginaRegulamentos();
   renderPaginaRepresentantes();
@@ -475,6 +481,218 @@ function renderPaginaRepresentantes() {
   document.title =
     "Representantes · Jogos da Juventude Católica (JJC)";
 }
+
+/* ==================================================================
+   8. ABA "EQUIPES" DAS MODALIDADES + PÁGINA DE TIMES POR FAIXA ETÁRIA
+   ------------------------------------------------------------------
+   Dados em js/equipes-data.js (JJC_FAIXAS e JJC_EQUIPES).
+
+   - initAbasModalidade(): alterna entre as abas "Informações" e
+     "Equipes" nas páginas de modalidade (futsal.html etc.). O link
+     futsal.html#equipes já abre direto na aba Equipes.
+   - renderAbaEquipes(): monta os cards de faixa etária (Infantil,
+     Juvenil, Adulto) que levam para times.html.
+   - renderPaginaTimes(): em times.html?modalidade=futsal&faixa=infantil
+     lista as equipes da faixa — masculino primeiro, depois feminino
+     (e misto), seguindo a ordem definida em JJC_FAIXAS.
+   ================================================================== */
+const JJC_GENERO_LABEL = { masculino: "Masculino", feminino: "Feminino", misto: "Misto" };
+const JJC_JOGO_LABEL = { "tenis-de-mesa": "Tênis de Mesa", pebolim: "Pebolim" };
+
+function escapeHtml(valor) {
+  return String(valor ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
+}
+
+function equipesDoGrupo(slug, faixaId, grupo) {
+  if (typeof JJC_EQUIPES === "undefined") return [];
+  return JJC_EQUIPES
+    .filter(e =>
+      e.modalidade === slug &&
+      e.faixa === faixaId &&
+      e.genero === grupo.genero &&
+      (e.jogo || null) === (grupo.jogo || null))
+    .sort((a, b) =>
+      a.comunidade.localeCompare(b.comunidade, "pt-BR") ||
+      (a.numero || 0) - (b.numero || 0));
+}
+
+function resumoFaixa(slug, faixa) {
+  const config = JJC_FAIXAS[slug];
+  const lista = faixa.grupos.flatMap(g => equipesDoGrupo(slug, faixa.id, g));
+
+  if (config.contagem === "atletas") {
+    const total = lista.reduce((soma, e) => soma + e.atletas.length, 0);
+    if (!total) return "Nenhum atleta inscrito ainda";
+    return total === 1 ? "1 atleta inscrito" : `${total} atletas inscritos`;
+  }
+
+  if (!lista.length) return "Nenhuma equipe inscrita ainda";
+  return lista.length === 1 ? "1 equipe inscrita" : `${lista.length} equipes inscritas`;
+}
+
+/* --- Abas "Informações" | "Equipes" --- */
+function initAbasModalidade() {
+  const abas = [...document.querySelectorAll("[data-tab]")];
+  const paineis = [...document.querySelectorAll("[data-tab-painel]")];
+  if (!abas.length || !paineis.length) return;
+
+  const barra = document.getElementById("abas-modalidade");
+
+  function ativar(id, { atualizarUrl = true, rolar = false } = {}) {
+    if (!paineis.some(p => p.dataset.tabPainel === id)) id = "info";
+
+    abas.forEach(a => {
+      const ativa = a.dataset.tab === id;
+      a.classList.toggle("active", ativa);
+      a.setAttribute("aria-selected", ativa ? "true" : "false");
+    });
+    paineis.forEach(p => { p.hidden = p.dataset.tabPainel !== id; });
+
+    if (atualizarUrl) {
+      const url = window.location.pathname + window.location.search + (id === "equipes" ? "#equipes" : "");
+      history.replaceState(null, "", url);
+    }
+    if (rolar && barra) barra.scrollIntoView({ block: "start" });
+  }
+
+  abas.forEach(a => a.addEventListener("click", () => ativar(a.dataset.tab)));
+
+  window.addEventListener("hashchange", () => {
+    ativar(window.location.hash === "#equipes" ? "equipes" : "info", { atualizarUrl: false });
+  });
+
+  // Estado inicial (ex.: futsal.html#equipes vindo do botão "Voltar")
+  if (window.location.hash === "#equipes") {
+    ativar("equipes", { atualizarUrl: false, rolar: true });
+  }
+}
+
+/* --- Cards de faixa etária dentro da aba Equipes --- */
+function renderAbaEquipes() {
+  const container = document.querySelector("[data-mod-faixas]");
+  const slug = document.body.getAttribute("data-modalidade");
+  if (!container || !slug || typeof JJC_FAIXAS === "undefined" || !JJC_FAIXAS[slug]) return;
+
+  container.innerHTML = JJC_FAIXAS[slug].faixas.map(faixa => `
+    <a class="jjc-faixa-card" href="times.html?modalidade=${encodeURIComponent(slug)}&faixa=${encodeURIComponent(faixa.id)}">
+      <span class="cc-eyebrow">Faixa etária</span>
+      <h3>${escapeHtml(faixa.nome)}</h3>
+      <p class="jjc-faixa-idade">${escapeHtml(faixa.idade)}</p>
+      <p class="jjc-faixa-resumo">${resumoFaixa(slug, faixa)}</p>
+      <span class="jjc-faixa-link">Ver equipes <span aria-hidden="true">→</span></span>
+    </a>
+  `).join("");
+}
+
+/* --- Página times.html --- */
+function renderPaginaTimes() {
+  const root = document.querySelector("[data-pagina-times]");
+  if (!root || typeof JJC_FAIXAS === "undefined" || typeof JJC_DATA === "undefined") return;
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("modalidade");
+  const faixaId = params.get("faixa");
+  const mod = JJC_DATA[slug];
+  const config = JJC_FAIXAS[slug];
+  const faixa = config && config.faixas.find(f => f.id === faixaId);
+
+  if (!mod || !faixa) {
+    setText("[data-times-titulo]", "Equipes");
+    setText("[data-times-descricao]", "Faixa etária não encontrada. Escolha uma modalidade para ver as equipes.");
+    root.innerHTML = `
+      <section class="cc-section">
+        <div class="cc-wrap">
+          <p class="cc-eyebrow">Modalidades</p>
+          <h2>Escolha uma modalidade</h2>
+          <ul class="jjc-categorias-lista">
+            ${Object.values(JJC_DATA).map(m => `<li><a href="${m.slug}.html#equipes">${escapeHtml(m.nome)}</a></li>`).join("")}
+          </ul>
+        </div>
+      </section>`;
+    return;
+  }
+
+  // --- Hero ---
+  setText("[data-times-tag]", `Jogos da Juventude Católica · ${mod.nome}`);
+  setText("[data-times-titulo]", `${mod.nome} · ${faixa.nome}`);
+  setText("[data-times-descricao]", `Equipes inscritas · Faixa etária: ${faixa.idade}`);
+  const voltar = document.querySelector("[data-times-voltar]");
+  if (voltar) {
+    voltar.href = `${slug}.html#equipes`;
+    voltar.textContent = `← Voltar para ${mod.nome}`;
+  }
+  document.title = `${mod.nome} ${faixa.nome} · Equipes · Jogos da Juventude Católica (JJC)`;
+
+  // Link ativo no menu: a modalidade atual
+  document.querySelectorAll(".jjc-nav-links a").forEach(a => {
+    if (a.getAttribute("href") === `${slug}.html`) a.classList.add("active");
+  });
+
+  // --- Troca rápida entre faixas (Infantil · Juvenil · Adulto) ---
+  const chips = document.querySelector("[data-times-faixas]");
+  if (chips) {
+    chips.innerHTML = `<div class="cc-wrap jjc-faixa-chips-inner">
+      ${config.faixas.map(f => `
+        <a href="times.html?modalidade=${encodeURIComponent(slug)}&faixa=${encodeURIComponent(f.id)}"
+           class="jjc-faixa-chip${f.id === faixa.id ? " active" : ""}"
+           ${f.id === faixa.id ? 'aria-current="page"' : ""}>${escapeHtml(f.nome)}</a>
+      `).join("")}
+    </div>`;
+    chips.hidden = false;
+  }
+
+  // --- Um bloco por grupo (masculino, feminino, misto...) ---
+  root.innerHTML = faixa.grupos.map(grupo => {
+    const equipes = equipesDoGrupo(slug, faixa.id, grupo);
+    const jogo = grupo.jogo ? JJC_JOGO_LABEL[grupo.jogo] : null;
+    const genero = JJC_GENERO_LABEL[grupo.genero] || grupo.genero;
+    const titulo = jogo ? `${jogo} · ${genero}` : genero;
+    const unidade = config.contagem === "atletas" ? "atleta" : "equipe";
+    const total = config.contagem === "atletas"
+      ? equipes.reduce((soma, e) => soma + e.atletas.length, 0)
+      : equipes.length;
+    const contagem = `${total} ${unidade}${total === 1 ? "" : "s"}`;
+
+    return `
+      <section class="cc-section">
+        <div class="cc-wrap">
+          <p class="cc-eyebrow">${escapeHtml(faixa.nome)}</p>
+          <h2>${escapeHtml(titulo)}</h2>
+          <p class="jjc-grupo-meta">
+            <span class="jjc-grupo-pill">${contagem}</span>
+            ${grupo.obs ? `<span>${escapeHtml(grupo.obs)}</span>` : ""}
+          </p>
+
+          ${equipes.length ? `
+            <div class="jjc-teams-grid">
+              ${equipes.map(eq => cardTime(eq, config.contagem)).join("")}
+            </div>
+          ` : `<p class="cc-note">Nenhuma ${config.contagem === "atletas" ? "inscrição" : "equipe inscrita"} nesta categoria até o momento.</p>`}
+        </div>
+      </section>`;
+  }).join("");
+}
+
+function cardTime(eq, contagem) {
+  const nome = eq.numero ? `${eq.comunidade} — Time ${eq.numero}` : eq.comunidade;
+  const qtd = eq.atletas.length;
+  const rotulo = `${qtd} atleta${qtd === 1 ? "" : "s"}`;
+
+  return `
+    <article class="jjc-team-card">
+      <h3>${escapeHtml(nome)}</h3>
+      <p class="jjc-team-comunidade">${escapeHtml(eq.setor)}</p>
+      <details class="jjc-atletas" ${contagem === "atletas" ? "open" : ""}>
+        <summary>${rotulo}</summary>
+        <ol class="jjc-atletas-lista">
+          ${eq.atletas.map(n => `<li>${escapeHtml(n)}</li>`).join("")}
+        </ol>
+      </details>
+    </article>`;
+}
+
 
 /* ==================================================================
    UTILITÁRIOS

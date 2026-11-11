@@ -1693,3 +1693,240 @@ footer p{
     }
 
 }
+
+/* ============================================
+   ABA "EQUIPES" — modalidades + times.html
+   ============================================ */
+
+[data-tab-painel][hidden]{
+    display:none;
+}
+
+/* ---------------- ABAS (Informações | Equipes) ---------------- */
+
+.jjc-tabs{
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--border);
+    scroll-margin-top:70px;
+}
+
+.jjc-tabs-inner{
+    display:flex;
+    gap:12px;
+    padding-top:18px;
+    padding-bottom:18px;
+}
+
+.jjc-tab{
+    font-family:inherit;
+    font-size:.9rem;
+    font-weight:600;
+    color:var(--text);
+    background:rgba(255,255,255,.05);
+    border:2px solid rgba(255,255,255,.25);
+    border-radius:50px;
+    padding:10px 28px;
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.jjc-tab:hover{
+    border-color:var(--secondary);
+    transform:translateY(-2px);
+}
+
+.jjc-tab.active{
+    background:var(--secondary);
+    border-color:var(--secondary);
+    color:var(--primary-dark);
+}
+
+/* ---------------- CARDS DE FAIXA ETÁRIA ---------------- */
+
+.jjc-faixas-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+    margin-top:34px;
+}
+
+.jjc-faixa-card{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px;
+    box-shadow:var(--shadow);
+    color:var(--text);
+    text-decoration:none;
+    transition:var(--transition);
+}
+
+.jjc-faixa-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-hover);
+    border-color:var(--secondary);
+    background:var(--surface-hover);
+}
+
+.jjc-faixa-card h3{
+    margin:0;
+    color:white;
+    font-size:1.5rem;
+}
+
+.jjc-faixa-card p{
+    margin:0;
+}
+
+.jjc-faixa-idade{
+    color:var(--text-muted);
+    font-size:.92rem;
+}
+
+.jjc-faixa-resumo{
+    color:var(--secondary-light);
+    font-size:.9rem;
+    font-weight:600;
+    margin-top:10px !important;
+}
+
+.jjc-faixa-link{
+    margin-top:14px;
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--secondary);
+}
+
+/* ---------------- PÁGINA times.html ---------------- */
+
+.cc-hero.jjc-hero-times{
+    min-height:46vh;
+    padding:120px 0 40px;
+}
+
+.jjc-faixa-chips{
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--border);
+}
+
+.jjc-faixa-chips[hidden]{
+    display:none;
+}
+
+.jjc-faixa-chips-inner{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    padding-top:18px;
+    padding-bottom:18px;
+}
+
+.jjc-faixa-chip{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+    font-size:.9rem;
+    background:rgba(255,255,255,.05);
+    border:2px solid rgba(255,255,255,.25);
+    border-radius:50px;
+    padding:10px 26px;
+    transition:var(--transition);
+}
+
+.jjc-faixa-chip:hover{
+    border-color:var(--secondary);
+    transform:translateY(-2px);
+}
+
+.jjc-faixa-chip.active{
+    background:var(--secondary);
+    border-color:var(--secondary);
+    color:var(--primary-dark);
+}
+
+.jjc-grupo-meta{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+    margin:0;
+    color:var(--text-muted);
+    font-size:.95rem;
+}
+
+.jjc-grupo-pill{
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--secondary-light);
+    font-weight:700;
+    font-size:.8rem;
+    padding:5px 14px;
+    border-radius:50px;
+}
+
+/* Lista de atletas dentro do card da equipe
+   (sobrescreve o estilo global de <details> usado no FAQ) */
+
+.jjc-team-card .jjc-atletas{
+    background:transparent;
+    border:0;
+    border-top:1px solid var(--border);
+    border-radius:0;
+    box-shadow:none;
+    margin:2px 0 0;
+    padding:14px 0 0;
+}
+
+.jjc-team-card .jjc-atletas:hover,
+.jjc-team-card .jjc-atletas[open]{
+    box-shadow:none;
+    border-color:var(--border);
+}
+
+.jjc-atletas summary{
+    font-size:.92rem;
+    font-weight:600;
+    color:var(--text);
+    justify-content:space-between;
+}
+
+.jjc-atletas summary::after{
+    content:"+";
+    font-size:1.3rem;
+    line-height:1;
+    color:var(--secondary);
+}
+
+.jjc-atletas[open] summary::after{
+    transform:rotate(45deg);
+}
+
+.jjc-atletas-lista{
+    margin:12px 0 0;
+    padding-left:22px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    font-size:.9rem;
+    color:var(--text-muted);
+}
+
+@media (max-width:600px){
+
+    .jjc-tabs-inner{
+        gap:8px;
+    }
+
+    .jjc-tab{
+        flex:1;
+        padding:10px 12px;
+    }
+
+    .cc-hero.jjc-hero-times{
+        padding:110px 0 30px;
+    }
+
+}

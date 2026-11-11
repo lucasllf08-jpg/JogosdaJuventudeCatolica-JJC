@@ -61,6 +61,35 @@
 
         <main>
 
+            <!-- ABAS DA MODALIDADE -->
+            <section class="cc-section" style="padding-bottom: 30px;">
+                <div class="cc-wrap">
+                    <p class="cc-eyebrow">Explore a modalidade</p>
+                    <h2>Conheça as equipes participantes</h2>
+                    <p>
+                        Quer conhecer as equipes que estarão em quadra nos Jogos da Juventude Católica?
+                        Acesse a aba Equipes e confira os times inscritos no volei, organizados por faixa etária.
+                    </p>
+                </div>
+
+                <div class="jjc-tabs" id="abas-modalidade">
+                    <div class="cc-wrap jjc-tabs-inner" role="tablist" aria-label="Seções de Volei">
+
+                        <button type="button" class="jjc-tab active" role="tab" data-tab="info" aria-selected="true">
+                            Informações
+                        </button>
+
+                        <button type="button" class="jjc-tab" role="tab" data-tab="equipes" aria-selected="false">
+                            Equipes
+                        </button>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABA: INFORMAÇÕES -->
+            <div data-tab-painel="info">
+
             <!-- SOBRE A MODALIDADE -->
             <section id="sobre" class="cc-section">
                 <div class="cc-wrap">
@@ -131,6 +160,21 @@
                 </div>
             </section>
 
+            </div>
+
+            <!-- ABA: EQUIPES -->
+            <div data-tab-painel="equipes" id="equipes" hidden>
+                <section class="cc-section">
+                    <div class="cc-wrap">
+                        <p class="cc-eyebrow">Equipes</p>
+                        <h2>Equipes de Vôlei</h2>
+                        <p>Escolha uma faixa etária para ver as equipes inscritas.</p>
+
+                        <div class="jjc-faixas-grid" data-mod-faixas></div>
+                    </div>
+                </section>
+            </div>
+
             <section class="cc-section">
                 <div class="cc-wrap">
 
@@ -166,6 +210,7 @@
 
 
     <script src="../js/data.js"></script>
+    <script src="../js/equipes-data.js"></script>
     <script src="../js/script.js"></script>
 </body>
 
