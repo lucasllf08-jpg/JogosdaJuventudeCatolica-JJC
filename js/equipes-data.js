@@ -166,33 +166,6 @@ const JJC_EQUIPES = [
     ]
   },
   {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
-    comunidade: "São Bento",
-    setor: "Setor 3 — São José, Sagrada e Nazaré",
-    numero: null,
-    atletas: [
-      "Jean de Souza",
-      "Miguel Earthal",
-      "Eduardo Reis",
-      "Gabriel Reis",
-      "Valdeci Lara",
-      "Henrique Nogueira",
-      "Luiz Henrique",
-      "Antonio Fernando"
-    ]
-  },
-  {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
-    comunidade: "São Bento",
-    setor: "Setor 3 — São José, Sagrada e Nazaré",
-    numero: null,
-    atletas: [
-      "Gabriel Lara",
-      "Erik Kauan",
-      "Gustavo Branco"
-    ]
-  },
-  {
     modalidade: "futsal", jogo: null, genero: "masculino", faixa: "juvenil",
     comunidade: "São Bento",
     setor: "Setor 3 — São José, Sagrada e Nazaré",
@@ -210,14 +183,19 @@ const JJC_EQUIPES = [
     ]
   },
   {
-    modalidade: "queimada", jogo: null, genero: "misto", faixa: "infantil",
+    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
     comunidade: "São Bento",
     setor: "Setor 3 — São José, Sagrada e Nazaré",
     numero: null,
     atletas: [
-      "Stefany Santana",
-      "Maisa Alencar",
-      "Gustavo Branco"
+      "Jean de Souza",
+      "Miguel Earthal",
+      "Eduardo Reis",
+      "Gabriel Reis",
+      "Valdeci Lara",
+      "Henrique Nogueira",
+      "Luiz Henrique",
+      "Antonio Fernando"
     ]
   },
   {
@@ -265,15 +243,6 @@ const JJC_EQUIPES = [
     ]
   },
   {
-    modalidade: "mesa", jogo: "tenis-de-mesa", genero: "masculino", faixa: "infantil",
-    comunidade: "São Bento",
-    setor: "Setor 3 — São José, Sagrada e Nazaré",
-    numero: null,
-    atletas: [
-      "Gustavo Branco"
-    ]
-  },
-  {
     modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
     comunidade: "São Miguel",
     setor: "Rio Preto, PA e Seringal",
@@ -295,6 +264,39 @@ const JJC_EQUIPES = [
     numero: null,
     atletas: [
       "Kauan Rodrigues da Silva"
+    ]
+  },
+  {
+    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
+    comunidade: "Nossa Senhora Aparecida",
+    setor: "Setor 1 — Matriz e São Francisco",
+    numero: 1,
+    atletas: [
+      "Pedro Jorge de Souza Conradi",
+      "Luiz Henrique Garcia da Silva",
+      "Gabriel Felix Souza",
+      "Victor de Almeida Fernandes",
+      "João Pedro de Castro",
+      "Vitor Daniel Oliveira da Costa",
+      "Luiz Antonio Rodrigues Xavier",
+      "Pablo Henrique Gomes da Silva"
+    ]
+  },
+  {
+    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
+    comunidade: "Nossa Senhora Aparecida",
+    setor: "Setor 1 — Matriz e São Francisco",
+    numero: 2,
+    atletas: [
+      "Mateus Polisel Gonçalves",
+      "Davi Queiroz de Souza",
+      "Miguel Queiroz da Silva",
+      "Arthur Erthal Carvalho",
+      "Oliver Barbosa Puhal",
+      "Mateus Campos Barbosa",
+      "Marcos Vinicius Guedes Pereira",
+      "Willian Fernando M. dos Santos",
+      "Maria Rita M. Salvatico"
     ]
   },
   {
@@ -324,38 +326,6 @@ const JJC_EQUIPES = [
       "Matheus Freitas Ulkowski",
       "Lucas Eduardo Baldres",
       "Arthur Nunes Nascimento"
-    ]
-  },
-  {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
-    comunidade: "Nossa Senhora Aparecida",
-    setor: "Setor 1 — Matriz e São Francisco",
-    numero: 1,
-    atletas: [
-      "Pedro Jorge de Souza Conradi",
-      "Luiz Henrique Garcia da Silva",
-      "Gabriel Felix Souza",
-      "Victor de Almeida Fernandes",
-      "João Pedro de Castro",
-      "Vitor Daniel Oliveira da Costa",
-      "Luiz Antonio Rodrigues Xavier"
-    ]
-  },
-  {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
-    comunidade: "Nossa Senhora Aparecida",
-    setor: "Setor 1 — Matriz e São Francisco",
-    numero: 2,
-    atletas: [
-      "Mateus Polisel Gonçalves",
-      "Davi Queiroz de Souza",
-      "Miguel Queiroz da Silva",
-      "Arthur Erthal Carvalho",
-      "Oliver Barbosa Puhal",
-      "Mateus Campos Barbosa",
-      "Marcos Vinicius Guedes Pereira",
-      "Willian Fernando M. dos Santos",
-      "Maria Rita M. Salvatico"
     ]
   },
   {
@@ -420,7 +390,7 @@ const JJC_EQUIPES = [
     ]
   },
   {
-    modalidade: "queimada", jogo: null, genero: "misto", faixa: "juvenil",
+    modalidade: "queimada", jogo: null, genero: "misto", faixa: "infantil",
     comunidade: "Nossa Senhora Aparecida",
     setor: "Setor 1 — Matriz e São Francisco",
     numero: null,
@@ -453,6 +423,22 @@ const JJC_EQUIPES = [
     ]
   },
   {
+    modalidade: "volei", jogo: null, genero: "feminino", faixa: "juvenil",
+    comunidade: "Nossa Senhora Aparecida",
+    setor: "Setor 1 — Matriz e São Francisco",
+    numero: null,
+    atletas: [
+      "Milena Clarindo dos Santos",
+      "Yasmin Lamberti Dezan",
+      "Sophia Gallo Mendes",
+      "Ariane Souza Gonçalves",
+      "Nay Larrissa Mendonça Costa",
+      "Alice Soares de Matos",
+      "Beatriz Coutinho M dos Santos",
+      "Daniely Marques da Mota"
+    ]
+  },
+  {
     modalidade: "volei", jogo: null, genero: "feminino", faixa: "adulto",
     comunidade: "Nossa Senhora Aparecida",
     setor: "Setor 1 — Matriz e São Francisco",
@@ -482,21 +468,6 @@ const JJC_EQUIPES = [
     ]
   },
   {
-    modalidade: "volei", jogo: null, genero: "feminino", faixa: "juvenil",
-    comunidade: "Nossa Senhora Aparecida",
-    setor: "Setor 1 — Matriz e São Francisco",
-    numero: null,
-    atletas: [
-      "Milena Clarindo dos Santos",
-      "Yasmin Lamberti Dezan",
-      "Sophia Gallo Mendes",
-      "Ariane Souza Gonçalves",
-      "Nay Larrissa Mendonça Costa",
-      "Alice Soares de Matos",
-      "Beatriz Coutinho M dos Santos"
-    ]
-  },
-  {
     modalidade: "mesa", jogo: "tenis-de-mesa", genero: "masculino", faixa: "juvenil",
     comunidade: "Nossa Senhora Aparecida",
     setor: "Setor 1 — Matriz e São Francisco",
@@ -520,6 +491,36 @@ const JJC_EQUIPES = [
       "Rubson Ribeiro Roro",
       "Marcelo dias da Silva",
       "Gustavo Sena Valle"
+    ]
+  },
+  {
+    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
+    comunidade: "Santo Expedito",
+    setor: "Nossa Senhora da Abadia",
+    numero: 1,
+    atletas: [
+      "Rual Kézio Ferreira Soares",
+      "Victor Eduardo C. Neizel",
+      "Ruan Kaio Ferreira",
+      "Theo Nunes da Silva",
+      "Gabriel Meireles Coelho",
+      "Gabriel Lara",
+      "Erik Kauan G. da Costa"
+    ]
+  },
+  {
+    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "juvenil",
+    comunidade: "Santo Expedito",
+    setor: "Nossa Senhora da Abadia",
+    numero: 1,
+    atletas: [
+      "Renan Gabrete de Carvalho",
+      "Thalysson Diego Borges Gonçalves",
+      "Rhian Lucas Sartor Guedes",
+      "José Henrique Mota Aragão",
+      "Lucas Lara Fonseca",
+      "Victor Miguel Luz Seconelli",
+      "Luan Michelin Duarte"
     ]
   },
   {
@@ -551,36 +552,6 @@ const JJC_EQUIPES = [
       "Felipe de Amorim de OLiveira",
       "Davi Rodrigues de Oliveira",
       "Agnaldo Campos Moura"
-    ]
-  },
-  {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "juvenil",
-    comunidade: "Santo Expedito",
-    setor: "Nossa Senhora da Abadia",
-    numero: 1,
-    atletas: [
-      "Renan Gabrete de Carvalho",
-      "Thalysson Diego Borges Gonçalves",
-      "Rhian Lucas Sartor Guedes",
-      "José Henrique Mota Aragão",
-      "Lucas Lara Fonseca",
-      "Victor Miguel Luz Seconelli",
-      "Luan Michelin Duarte"
-    ]
-  },
-  {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "infantil",
-    comunidade: "Santo Expedito",
-    setor: "Nossa Senhora da Abadia",
-    numero: 1,
-    atletas: [
-      "Rual Kézio Ferreira Soares",
-      "Victor Eduardo C. Neizel",
-      "Ruan Kaio Ferreira",
-      "Theo Nunes da Silva",
-      "Gabriel Meireles Coelho",
-      "Gabriel Lara",
-      "Erik Kauan G. da Costa"
     ]
   },
   {
@@ -622,6 +593,15 @@ const JJC_EQUIPES = [
     numero: null,
     atletas: [
       "Ismael Carmo de Olliveira"
+    ]
+  },
+  {
+    modalidade: "mesa", jogo: "tenis-de-mesa", genero: "feminino", faixa: "juvenil",
+    comunidade: "Santo Expedito",
+    setor: "Nossa Senhora da Abadia",
+    numero: null,
+    atletas: [
+      "Maria Eduarda P. Costa"
     ]
   }
 ];

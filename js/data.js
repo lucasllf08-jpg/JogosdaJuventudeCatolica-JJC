@@ -48,9 +48,9 @@ const JJC_DATA = {
       "O Futsal é uma das modalidades mais tradicionais dos Jogos da Juventude Católica (JJC), reunindo equipes formadas pelas comunidades da Paróquia Nossa Senhora Aparecida. O JJC é um evento fechado, destinado exclusivamente à comunidade católica, e o Futsal reforça esse propósito por meio da convivência, da evangelização e do fortalecimento dos laços entre os jovens e adultos participantes. Cada equipe pode ter no mínimo 5 e no máximo 8 atletas.",
 
     infoGerais: {
-      data: "20 a 22 de novembro de 2026",
-      horario: "A definir",
-      local: "A definir"
+      data: "21 e 22 de novembro de 2026",
+      horario: "Das 08h às 17h",
+      local: "Escola Jean Piaget"
     },
 
     categorias: [
@@ -61,10 +61,8 @@ const JJC_DATA = {
     ],
 
     programacao: [
-      { hora: "A definir", evento: "Abertura oficial e oração inicial" },
-      { hora: "A definir", evento: "Início dos jogos da fase de grupos" },
-      { hora: "A definir", evento: "Semifinais" },
-      { hora: "A definir", evento: "Final e premiação" }
+      { hora: "21/11 · 08h às 17h", evento: "Jogos do Futsal" },
+      { hora: "22/11 · 08h às 17h", evento: "Jogos do Futsal" }
     ],
 
 
@@ -123,9 +121,9 @@ const JJC_DATA = {
       "O Vôlei nos Jogos da Juventude Católica (JJC) reúne equipes das comunidades da Paróquia Nossa Senhora Aparecida. A modalidade feminina será disputada em quadra (no mínimo 6 e até 8 atletas.) e a masculina em areia (no mínimo 4 e até 6 atletas.). Assim como as demais modalidades do JJC, a participação é exclusiva para a comunidade católica.",
 
     infoGerais: {
-      data: "20 a 22 de novembro de 2026",
-      horario: "A definir",
-      local: "Jerris (local a confirmar)"
+      data: "21 e 22 de novembro de 2026",
+      horario: "21/11: a partir das 13h · 22/11: a partir das 08h",
+      local: "Escola Jerris Adriane Turatti"
     },
 
     categorias: [
@@ -136,10 +134,8 @@ const JJC_DATA = {
     ],
 
     programacao: [
-      { hora: "A definir", evento: "Abertura oficial e oração inicial" },
-      { hora: "A definir", evento: "Fase de grupos" },
-      { hora: "A definir", evento: "Semifinais" },
-      { hora: "A definir", evento: "Final e premiação" }
+      { hora: "21/11 · a partir das 13h", evento: "Jogos de Vôlei" },
+      { hora: "22/11 · a partir das 08h", evento: "Jogos de Vôlei" }
     ],
 
 
@@ -186,9 +182,9 @@ const JJC_DATA = {
       "A Queimada é uma das modalidades mais animadas dos Jogos da Juventude Católica (JJC), reunindo equipes mistas das comunidades da Paróquia Nossa Senhora Aparecida em partidas descontraídas, com no máximo 12 atletas por equipe. Para que a modalidade seja realmente mista, o ideal é que as equipes sejam formadas por, no mínimo, 5 mulheres e 7 homens. Sabemos que algumas localidades podem ter dificuladades para completar essa divisão, e nesses casos haverá compreensão. Porém, nosso intuito é incentivar a participação equilibrada.",
 
     infoGerais: {
-      data: "20 a 22 de novembro de 2026",
-      horario: "A definir",
-      local: "A definir"
+      data: "20 de novembro de 2026",
+      horario: "A partir das 19h",
+      local: "Escola 7 de Setembro"
     },
 
     categorias: [
@@ -198,10 +194,7 @@ const JJC_DATA = {
     ],
 
     programacao: [
-      { hora: "A definir", evento: "Abertura oficial e oração inicial" },
-      { hora: "A definir", evento: "Fase de grupos" },
-      { hora: "A definir", evento: "Semifinais" },
-      { hora: "A definir", evento: "Final e premiação" }
+      { hora: "20/11 · a partir das 19h", evento: "Jogos de Queimada" }
     ],
 
 
@@ -251,9 +244,9 @@ const JJC_DATA = {
       "Os Jogos de Mesa fazem parte dos Jogos da Juventude Católica (JJC), reunindo participantes em disputas de Tênis de Mesa e Pebolim.A participação no Tênis de Mesa é individual e no pebolim devem ser formadas esquipes de 2 atletas (Cada comunidade pode ter mais de um atleta ou equipe). A modalidade proporciona momentos de diversão, concentração, estratégia e convivência entre os jovens da comunidade católica da Paróquia Nossa Senhora Aparecida.",
 
     infoGerais: {
-      data: "20 a 22 de novembro de 2026",
-      horario: "A definir",
-      local: "Paróquia Nossa Senhora Aparecida (local a divulgar)"
+      data: "21 e 22 de novembro de 2026",
+      horario: "21/11: a partir das 13h · 22/11: a partir das 08h",
+      local: "Escola Jerris Adriane Turatti"
     },
 
     categorias: [
@@ -263,10 +256,8 @@ const JJC_DATA = {
     ],
 
     programacao: [
-      { hora: "A definir", evento: "Abertura oficial e oração inicial" },
-      { hora: "A definir", evento: "Início das disputas de Tênis de Mesa" },
-      { hora: "A definir", evento: "Início das disputas de Pebolim" },
-      { hora: "A definir", evento: "Finais e premiação" }
+      { hora: "21/11 · a partir das 13h", evento: "Tênis de Mesa e Pebolim" },
+      { hora: "22/11 · a partir das 08h", evento: "Tênis de Mesa e Pebolim" }
     ],
 
 
