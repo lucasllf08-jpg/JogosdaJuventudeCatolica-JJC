@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas · Jogos da Juventude Católica (JJC)</title>
+    <link rel="icon" type="image/png" href="../img/logo-png.png">
+    <meta name="description"
+        content="Tabelas, chaves, jogos e classificação de cada modalidade e categoria dos Jogos da Juventude Católica (JJC).">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tabelas.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="cc-root">
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="jjc-nav" id="siteNav">
+            <div class="cc-wrap jjc-nav-inner">
+                <a href="../index.html" class="jjc-logo">JJC <span>Jogos da Juventude Católica</span></a>
+                <button class="jjc-nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="jjc-nav-links" id="navLinks">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="futsal.html">Futsal</a></li>
+                    <li><a href="volei.html">Vôlei</a></li>
+                    <li><a href="queimada.html">Queimada</a></li>
+                    <li><a href="mesa.html">Jogos de Mesa</a></li>
+                    <li><a href="tabelas.html" class="active">Tabelas</a></li>
+                    <li><a href="representantes.html">Inscrição</a></li>
+                    <li><a href="equipe.html">Equipe JJC</a></li>
+                    <li><a href="../regulamentos.html" class="jjc-nav-cta">Regulamentos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <header class="cc-hero jjc-hero-times">
+            <div class="cc-hero-img" style="background-image:url('../img/logo.jpeg')"></div>
+            <div class="cc-wrap">
+
+                <p class="cc-tag">Jogos da Juventude Católica · Tabelas</p>
+
+                <h1>Tabelas e Classificação</h1>
+
+                <p data-tab-descricao>Chaves, jogos e classificação de cada modalidade e categoria.</p>
+
+                <div class="cc-hero-actions">
+                    <a href="../index.html" class="cc-btn cc-btn-primary">← Voltar ao início</a>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- ESCOLHA DA MODALIDADE E DA CATEGORIA -->
+        <nav class="jjc-faixa-chips" aria-label="Modalidades" data-tab-modalidades hidden></nav>
+        <nav class="jjc-faixa-chips tb-nav-cat" aria-label="Categorias" data-tab-categorias hidden></nav>
+
+        <!-- TABELAS (montado por js/tabelas.js a partir de js/tabelas-data.js) -->
+        <main data-pagina-tabelas>
+            <section class="cc-section">
+                <div class="cc-wrap">
+                    <p>Carregando tabelas...</p>
+                    <noscript><p class="cc-note">Ative o JavaScript para ver as tabelas.</p></noscript>
+                </div>
+            </section>
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="cc-section">
+            <div class="cc-wrap">
+                <p>© 2026 - Jogos da Juventude Católica (JJC)</p>
+                <p>Paróquia Nossa Senhora Aparecida — Espigão do Oeste, RO</p>
+                <p>"Evangelizar pelo esporte, unir pela fé."</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/equipes-data.js"></script>
+    <script src="../js/tabelas-data.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/tabelas.js"></script>
+</body>
+
+</html>

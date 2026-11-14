@@ -1930,3 +1930,18 @@ footer p{
     }
 
 }
+
+
+/* ---------------- MENU: cabe o item "Tabelas" em telas largas ---------------- */
+@media (min-width:901px){
+    .jjc-nav-links{
+        gap:clamp(10px,1.5vw,22px);
+    }
+    .jjc-nav-links a{
+        white-space:nowrap;
+        font-size:clamp(.74rem,1vw,.9rem);
+    }
+    .jjc-nav-links a.jjc-nav-cta{
+        padding:8px clamp(10px,1.2vw,18px);
+    }
+}

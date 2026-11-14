@@ -1,0 +1,359 @@
+/* ==================================================================
+   tabelas.css — estilos da página html/tabelas.html
+   (usa as variáveis e componentes de style.css)
+   ================================================================== */
+
+/* Segunda linha de chips (categorias) */
+.tb-nav-cat{
+    background:var(--bg);
+}
+.tb-nav-cat .jjc-faixa-chips-inner{
+    padding-top:14px;
+    padding-bottom:14px;
+}
+.tb-chip-sm{
+    font-size:.8rem;
+    padding:7px 18px;
+    border-width:1px;
+}
+.tb-chip-com-tabela{
+    border-color:var(--primary-light);
+}
+
+.tb-secao h3,
+.tb-secao h4{
+    margin-top:0;
+}
+
+.tb-sub{
+    margin:26px 0 12px;
+    font-size:1rem;
+    color:var(--secondary-light);
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    font-weight:600;
+}
+
+/* ---------- "Tabela em breve" ---------- */
+.tb-embreve{
+    margin-top:22px;
+    padding:24px 26px;
+    background:var(--surface);
+    border:1px dashed var(--border);
+    border-radius:var(--radius);
+}
+.tb-embreve strong{
+    display:block;
+    color:var(--secondary-light);
+    font-size:1.1rem;
+    margin-bottom:6px;
+}
+.tb-embreve p{
+    margin:0;
+}
+
+.tb-inscritos{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:10px;
+}
+.tb-inscritos li{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-sm);
+    padding:10px 16px;
+    font-weight:500;
+    display:flex;
+    flex-direction:column;
+}
+.tb-inscritos small{
+    color:var(--text-muted);
+    font-weight:400;
+    font-size:.78rem;
+}
+
+/* ---------- Pódio ---------- */
+.tb-podio{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin:22px 0 6px;
+}
+.tb-podio-item{
+    flex:1 1 200px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    background:var(--surface);
+    border:1px solid var(--secondary);
+    border-radius:var(--radius);
+    padding:16px 18px;
+}
+.tb-podio-medalha{ font-size:2rem; line-height:1; }
+.tb-podio-lugar{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    color:var(--text-muted);
+    margin:6px 0 2px;
+}
+
+/* ---------- Chaves ---------- */
+.tb-chaves{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:26px;
+    margin-top:24px;
+}
+.tb-chaves-multi{
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));
+    align-items:start;
+}
+.tb-chave,
+.tb-fase{
+    background:var(--bg-alt);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px 22px 18px;
+    min-width:0;
+}
+.tb-chave-titulo{
+    font-size:1.25rem;
+    margin:0 0 14px;
+    color:var(--text);
+}
+
+/* ---------- Tabela de classificação ---------- */
+.tb-scroll{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    border-radius:var(--radius-sm);
+    border:1px solid var(--border);
+}
+.tb-tabela{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.9rem;
+    min-width:420px;
+}
+.tb-tabela th,
+.tb-tabela td{
+    padding:9px 10px;
+    text-align:center;
+    white-space:nowrap;
+}
+.tb-tabela th{
+    background:var(--primary-dark);
+    color:var(--text-muted);
+    font-size:.72rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+.tb-tabela td{
+    border-top:1px solid var(--border);
+    color:var(--text);
+}
+.tb-tabela .tb-nome{
+    text-align:left;
+    white-space:normal;
+    min-width:150px;
+    font-weight:500;
+}
+.tb-tabela th.tb-nome{ font-weight:600; }
+.tb-tabela .tb-pos{
+    width:34px;
+    color:var(--text-muted);
+}
+.tb-tabela .tb-pts{
+    font-weight:700;
+    color:var(--secondary-light);
+}
+.tb-tabela tbody tr:hover{
+    background:rgba(255,255,255,.03);
+}
+.tb-tabela tr.tb-classificado td{
+    background:rgba(212,175,55,.10);
+}
+.tb-tabela tr.tb-classificado td:first-child{
+    box-shadow:inset 4px 0 0 var(--secondary);
+    color:var(--secondary-light);
+    font-weight:700;
+}
+.tb-legenda{
+    margin:10px 2px 0;
+    font-size:.78rem;
+    color:var(--text-muted);
+}
+.tb-legenda-dest{
+    color:var(--secondary-light);
+    font-weight:600;
+}
+
+/* ---------- Jogos ---------- */
+.tb-jogos{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.tb-rodada{
+    margin-top:8px;
+    font-size:.75rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    color:var(--text-muted);
+}
+.tb-jogo{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-sm);
+    padding:10px 14px;
+}
+.tb-jogo-info{
+    font-size:.75rem;
+    color:var(--text-muted);
+    margin-bottom:4px;
+}
+.tb-confronto{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:12px;
+}
+.tb-eq{
+    font-weight:500;
+    color:var(--text);
+    overflow-wrap:anywhere;
+}
+.tb-eq-a{ text-align:right; }
+.tb-eq-b{ text-align:left; }
+.tb-venc{
+    color:var(--secondary-light);
+    font-weight:700;
+}
+.tb-placar{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    min-width:64px;
+    justify-content:center;
+    background:var(--primary-dark);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:3px 12px;
+    font-size:1rem;
+    color:var(--text);
+}
+.tb-placar i{
+    font-style:normal;
+    color:var(--text-muted);
+    font-size:.85rem;
+}
+.tb-jogo-feito .tb-placar{
+    border-color:var(--primary-light);
+}
+.tb-obs{
+    margin-top:4px;
+    font-size:.75rem;
+    color:var(--text-muted);
+    text-align:center;
+}
+
+/* ---------- Fase final ---------- */
+.tb-finais{
+    margin-top:34px;
+}
+.tb-fase-titulo{
+    font-size:1.35rem;
+    margin:0 0 14px;
+}
+.tb-fase + .tb-fase{
+    margin-top:18px;
+}
+.tb-fase .tb-sub{
+    margin-top:0;
+}
+
+/* ---------- Tela de conferência (?conferir=1) ---------- */
+.tb-conferir{
+    border-bottom:1px solid var(--border);
+}
+.tb-conferir code{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:1px 7px;
+    font-size:.85rem;
+    color:var(--secondary-light);
+    user-select:all;
+}
+.tb-avisos{
+    margin:0 0 20px;
+    padding:14px 18px 14px 36px;
+    background:rgba(212,175,55,.10);
+    border:1px solid var(--secondary);
+    border-radius:var(--radius-sm);
+    color:var(--text);
+    font-size:.9rem;
+}
+.tb-avisos li + li{ margin-top:6px; }
+.tb-nomes{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-sm);
+    margin-bottom:10px;
+    padding:10px 16px;
+}
+.tb-nomes summary{
+    cursor:pointer;
+    font-weight:600;
+    color:var(--text);
+}
+.tb-nomes-cat h4{
+    margin:16px 0 6px;
+    font-size:.95rem;
+}
+.tb-nomes-cat h4 small{
+    color:var(--text-muted);
+    font-weight:400;
+    margin-left:6px;
+}
+.tb-nomes-cat ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 8px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width:600px){
+    .tb-chave,
+    .tb-fase{
+        padding:16px 14px 14px;
+    }
+    .tb-confronto{
+        grid-template-columns:1fr;
+        gap:6px;
+        text-align:center;
+    }
+    .tb-eq-a,
+    .tb-eq-b{
+        text-align:center;
+    }
+    .tb-placar{
+        justify-self:center;
+    }
+    .tb-jogo-info{
+        text-align:center;
+    }
+}
