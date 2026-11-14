@@ -357,3 +357,36 @@
         text-align:center;
     }
 }
+
+
+/* ---------- Cartões (lançados em html/admin.html) ---------- */
+.tb-cartoes{
+    list-style:none;
+    padding:0;
+    margin:8px 0 0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:4px 14px;
+    font-size:.78rem;
+    color:var(--text-muted);
+}
+.tb-cartao{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+.tb-cartao small{
+    opacity:.8;
+}
+.tb-cartao-icone{
+    display:inline-block;
+    width:10px;
+    height:14px;
+    border-radius:2px;
+    background:#F5C518;
+    box-shadow:0 0 0 1px rgba(0,0,0,.25);
+}
+.tb-cartao-vermelho .tb-cartao-icone{
+    background:#D6322E;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Painel da organização · JJC</title>
+    <link rel="icon" type="image/png" href="../img/logo-png.png">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Página restrita: não está no menu do site. Só quem tem login de administrador consegue lançar resultados. -->
+    <div class="cc-root ad-root">
+
+        <header class="ad-topo">
+            <div class="cc-wrap ad-topo-inner">
+                <strong class="ad-titulo">JJC · Painel da organização</strong>
+                <div class="ad-usuario" data-ad-usuario hidden>
+                    <span data-ad-email></span>
+                    <button type="button" class="ad-btn ad-btn-sec" data-acao="sair">Sair</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="cc-wrap ad-main">
+
+            <p class="ad-aviso" data-ad-aviso hidden></p>
+
+            <!-- LOGIN -->
+            <section class="ad-card ad-login" data-ad-login hidden>
+                <h1>Entrar</h1>
+                <p>Acesso restrito à organização do evento.</p>
+                <form data-ad-form>
+                    <label>E-mail
+                        <input type="email" name="email" autocomplete="username" required>
+                    </label>
+                    <label>Senha
+                        <input type="password" name="senha" autocomplete="current-password" required>
+                    </label>
+                    <button type="submit" class="ad-btn">Entrar</button>
+                    <p class="ad-status" data-ad-login-status role="status"></p>
+                </form>
+            </section>
+
+            <!-- PAINEL -->
+            <section data-ad-painel hidden>
+                <div class="ad-card">
+                    <label>Categoria
+                        <select data-ad-categoria></select>
+                    </label>
+                    <div class="ad-linha-acoes">
+                        <a class="ad-link" data-ad-ver href="#" target="_blank" rel="noopener">Ver página pública ↗</a>
+                        <button type="button" class="ad-btn ad-btn-sec" data-acao="recarregar">Recarregar</button>
+                    </div>
+                    <p class="ad-dica">Preencha o placar e toque em <strong>Salvar</strong> em cada jogo. Os números
+                        aparecem no site em até 30 segundos. Placar em jogos/sets (tênis de mesa), gols (futsal) etc.</p>
+                </div>
+
+                <div data-ad-jogos></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Biblioteca do Supabase (versão fixa) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/equipes-data.js"></script>
+    <script src="../js/tabelas-data.js"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

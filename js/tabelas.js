@@ -8,6 +8,13 @@
 
    Não é preciso mexer neste arquivo para atualizar tabelas.
 
+   RESULTADOS AO VIVO (Supabase)
+   Placares, pênaltis, cartões, horários e confrontos de mata-mata
+   lançados em html/admin.html ficam no Supabase. Aqui eles são lidos
+   (ver js/supabase-config.js) e SOBREPOSTOS aos jogos de
+   js/tabelas-data.js. Se o Supabase não estiver configurado ou estiver
+   fora do ar, o site continua funcionando só com o tabelas-data.js.
+
    URL:  tabelas.html?modalidade=futsal&categoria=adulto-masculino
          tabelas.html?conferir=1      -> tela de conferência (nomes válidos
                                          e avisos de erro de digitação)
@@ -67,6 +74,77 @@
   }
   const placarPreenchido = p => !(p === undefined || p === null || p === "" || (Array.isArray(p) && !p.length));
 
+  /* ---------------- resultados vindos do Supabase ---------------- */
+  // id do jogo -> linha da tabela jogos_resultados (preenchido por carregarResultados)
+  let RESULTADOS = {};
+  let ULTIMA_ATUALIZACAO = null;
+  const INTERVALO_ATUALIZACAO = 30000; // 30 s
+
+  const supabaseConfigurado = () =>
+    typeof JJC_SUPABASE !== "undefined" && JJC_SUPABASE && JJC_SUPABASE.url && JJC_SUPABASE.anonKey;
+
+  async function carregarResultados() {
+    if (!supabaseConfigurado()) return false;
+    try {
+      const base = String(JJC_SUPABASE.url).replace(/\/+$/, "");
+      const tabela = JJC_SUPABASE.tabela || "jogos_resultados";
+      const r = await fetch(`${base}/rest/v1/${tabela}?select=*`, {
+        headers: { apikey: JJC_SUPABASE.anonKey },
+        cache: "no-store"
+      });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const linhas = await r.json();
+      const novo = {};
+      let ultima = null;
+      linhas.forEach(l => {
+        novo[l.id] = l;
+        if (l.atualizado_em && (!ultima || l.atualizado_em > ultima)) ultima = l.atualizado_em;
+      });
+      const mudou = JSON.stringify(novo) !== JSON.stringify(RESULTADOS);
+      RESULTADOS = novo;
+      ULTIMA_ATUALIZACAO = ultima;
+      return mudou;
+    } catch (e) {
+      console.warn("[Tabelas] Não foi possível ler os resultados do Supabase:", e);
+      return false;
+    }
+  }
+
+  // Aplica a linha do banco sobre um jogo do tabelas-data.js.
+  // Texto vazio no banco = "não alterar" (vale o que está no tabelas-data.js).
+  function mesclarJogo(j, id) {
+    const r = RESULTADOS[id];
+    if (!j || !r) return j ? { ...j, id } : j;
+    const out = { ...j, id };
+    ["placar", "penaltis", "obs", "a", "b", "data", "hora", "local"].forEach(k => {
+      if (r[k] !== undefined && r[k] !== null && String(r[k]).trim() !== "") out[k] = r[k];
+    });
+    if (Array.isArray(r.cartoes) && r.cartoes.length) out.cartoes = r.cartoes;
+    return out;
+  }
+
+  function mesclarTabela(slug, catId, t) {
+    if (!t) return t;
+    return {
+      ...t,
+      chaves: (t.chaves || []).map((c, ci) => ({
+        ...c,
+        jogos: (c.jogos || []).map((j, ji) => mesclarJogo(j, `${slug}/${catId}/c${ci}/j${ji}`))
+      })),
+      fasesFinais: (t.fasesFinais || []).map((f, fi) => ({
+        ...f,
+        jogos: (f.jogos || []).map((j, ji) => mesclarJogo(j, `${slug}/${catId}/f${fi}/j${ji}`))
+      }))
+    };
+  }
+
+  function textoAtualizacao(iso) {
+    const d = new Date(iso);
+    if (isNaN(d)) return "";
+    const p = n => String(n).padStart(2, "0");
+    return `${p(d.getDate())}/${p(d.getMonth() + 1)} às ${p(d.getHours())}h${p(d.getMinutes())}`;
+  }
+
   /* ---------------- participantes inscritos ---------------- */
   // Lista {nome, sub} de quem está inscrito na categoria
   function participantes(slug, cat) {
@@ -118,7 +196,7 @@
     });
 
     cats.forEach(c => {
-      c.tabela = tabs.find(t => idDe(t) === c.id) || null;
+      c.tabela = mesclarTabela(slug, c.id, tabs.find(t => idDe(t) === c.id) || null);
       c.part = participantes(slug, c);
     });
     return cats.filter(c => c.part.length || c.tabela);
@@ -262,6 +340,14 @@
       }
       const info = [j.data, j.hora, j.local].filter(Boolean).map(esc).join(" · ");
       const obs = [pen ? `Pênaltis: ${pen.a} × ${pen.b}` : "", j.obs || ""].filter(Boolean).map(esc).join(" · ");
+      const cartoes = (Array.isArray(j.cartoes) ? j.cartoes : []).filter(c => c && c.atleta).map(c => {
+        const vermelho = String(c.tipo || "").toLowerCase().startsWith("verm");
+        const equipe = c.lado === "b" ? nome(j.b) : c.lado === "a" ? nome(j.a) : "";
+        return `<li class="tb-cartao ${vermelho ? "tb-cartao-vermelho" : "tb-cartao-amarelo"}">
+                  <span class="tb-cartao-icone" aria-label="Cartão ${vermelho ? "vermelho" : "amarelo"}"></span>
+                  ${esc(c.atleta)}${equipe && equipe !== c.atleta ? ` <small>(${esc(equipe)})</small>` : ""}
+                </li>`;
+      }).join("");
 
       let cab = "";
       if (placarPreenchido(j.rodada) && j.rodada !== rodadaAtual) {
@@ -279,6 +365,7 @@
             <span class="tb-eq tb-eq-b${venceB ? " tb-venc" : ""}">${esc(nome(j.b))}</span>
           </div>
           ${obs ? `<div class="tb-obs">${obs}</div>` : ""}
+          ${cartoes ? `<ul class="tb-cartoes" aria-label="Cartões">${cartoes}</ul>` : ""}
         </li>`;
     }).join("") + `</ul>`;
   }
@@ -473,6 +560,22 @@
     const root = document.querySelector("[data-pagina-tabelas]");
     if (!root) return;
 
+    render();
+
+    // Resultados ao vivo: busca ao abrir e repete a cada 30 s (só com a aba visível)
+    if (supabaseConfigurado()) {
+      const atualizar = () => carregarResultados().then(mudou => { if (mudou) render(); });
+      atualizar();
+      if (!new URLSearchParams(window.location.search).has("conferir")) {
+        setInterval(() => { if (!document.hidden) atualizar(); }, INTERVALO_ATUALIZACAO);
+      }
+    }
+  }
+
+  function render() {
+    const root = document.querySelector("[data-pagina-tabelas]");
+    if (!root) return;
+
     if (typeof JJC_DATA === "undefined" || typeof JJC_FAIXAS === "undefined" || typeof JJC_TABELAS === "undefined") {
       root.innerHTML = `<section class="cc-section"><div class="cc-wrap"><p class="cc-note">Não foi possível carregar os dados das tabelas.</p></div></section>`;
       return;
@@ -490,8 +593,9 @@
     const meta = typeof JJC_TABELAS_META !== "undefined" ? JJC_TABELAS_META : {};
     const elDesc = document.querySelector("[data-tab-descricao]");
     if (elDesc) {
-      elDesc.textContent = meta.atualizadoEm
-        ? `Chaves, jogos e classificação · Atualizado em ${meta.atualizadoEm}`
+      const quando = meta.atualizadoEm || (ULTIMA_ATUALIZACAO ? textoAtualizacao(ULTIMA_ATUALIZACAO) : "");
+      elDesc.textContent = quando
+        ? `Chaves, jogos e classificação · Atualizado em ${quando}`
         : "Chaves, jogos e classificação de cada modalidade e categoria.";
     }
 
