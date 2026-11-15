@@ -521,7 +521,7 @@ const JJC_INFO = {
     titulo: "Regulamento Geral do JJC",
     texto:
       "O Regulamento Geral reúne as normas que valem para todas as modalidades dos Jogos da Juventude Católica: critérios de participação, identidade do evento, conduta esportiva, uso de imagem e demais disposições comuns. Cada modalidade também possui um regulamento específico, com suas próprias categorias, limites de atletas e regras de disputa.",
-    pdf: "docs/regulamento-geral.pdf"
+    pdf: "pdf/Regulamento_Geral_JJC_2026.pdf"
   },
 
 };
