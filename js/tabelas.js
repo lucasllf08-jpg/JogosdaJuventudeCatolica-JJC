@@ -120,6 +120,8 @@
       if (r[k] !== undefined && r[k] !== null && String(r[k]).trim() !== "") out[k] = r[k];
     });
     if (Array.isArray(r.cartoes) && r.cartoes.length) out.cartoes = r.cartoes;
+    if (Array.isArray(r.parciais) && r.parciais.length) out.parciais = r.parciais;
+    if (r.extras && typeof r.extras === "object" && Object.keys(r.extras).length) out.extras = r.extras;
     return out;
   }
 
@@ -349,6 +351,14 @@
                 </li>`;
       }).join("");
 
+      // parciais (sets/jogos), morte súbita e faltas técnicas — lançados no painel
+      const parc = (Array.isArray(j.parciais) ? j.parciais : []).filter(x => Array.isArray(x) && x.length === 2 && x[0] !== "" && x[1] !== "");
+      const ex = (j.extras && typeof j.extras === "object") ? j.extras : {};
+      const extra = [];
+      if (ex.ms && parc[0]) extra.push(`Tempo normal ${parc[0][0]}×${parc[0][1]} · Morte súbita: ${esc(nome(ex.ms === "b" ? j.b : j.a))}`);
+      else if (parc.length) extra.push(parc.map(x => `${x[0]}×${x[1]}`).join(" · "));
+      if (ex.ft && (Number(ex.ft.a) || Number(ex.ft.b))) extra.push(`Faltas técnicas: ${Number(ex.ft.a) || 0} × ${Number(ex.ft.b) || 0}`);
+
       let cab = "";
       if (placarPreenchido(j.rodada) && j.rodada !== rodadaAtual) {
         rodadaAtual = j.rodada;
@@ -364,6 +374,7 @@
             <span class="tb-placar">${p ? `<b>${p.a}</b><i>×</i><b>${p.b}</b>` : "<i>×</i>"}</span>
             <span class="tb-eq tb-eq-b${venceB ? " tb-venc" : ""}">${esc(nome(j.b))}</span>
           </div>
+          ${extra.length ? `<div class="tb-parciais">${extra.join("<br>")}</div>` : ""}
           ${obs ? `<div class="tb-obs">${obs}</div>` : ""}
           ${cartoes ? `<ul class="tb-cartoes" aria-label="Cartões">${cartoes}</ul>` : ""}
         </li>`;

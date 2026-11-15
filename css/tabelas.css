@@ -390,3 +390,13 @@
 .tb-cartao-vermelho .tb-cartao-icone{
     background:#D6322E;
 }
+
+
+/* ---------- Parciais, morte súbita e faltas técnicas (lançados no painel) ---------- */
+.tb-parciais{
+    margin-top:6px;
+    text-align:center;
+    font-size:.78rem;
+    line-height:1.5;
+    color:var(--text-muted);
+}

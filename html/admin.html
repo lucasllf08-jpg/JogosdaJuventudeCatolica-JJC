@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0A3A40">
     <title>Painel da organização · JJC</title>
     <link rel="icon" type="image/png" href="../img/logo-png.png">
 
@@ -21,18 +22,23 @@
     <div class="cc-root ad-root">
 
         <header class="ad-topo">
-            <div class="cc-wrap ad-topo-inner">
-                <strong class="ad-titulo">JJC · Painel da organização</strong>
-                <div class="ad-usuario" data-ad-usuario hidden>
-                    <span data-ad-email></span>
-                    <button type="button" class="ad-btn ad-btn-sec" data-acao="sair">Sair</button>
+            <div class="ad-topo-inner">
+                <strong class="ad-marca"><span class="ad-marca-jjc">JJC</span>Painel</strong>
+
+                <div class="ad-conta" data-ad-usuario hidden>
+                    <button type="button" class="ad-avatar" data-acao="menu-conta" aria-haspopup="true"
+                        aria-expanded="false" aria-label="Conta"><span data-ad-inicial>?</span></button>
+                    <div class="ad-menu" data-ad-menu hidden>
+                        <span class="ad-menu-email" data-ad-email></span>
+                        <button type="button" class="ad-menu-item" data-acao="sair">Sair</button>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main class="cc-wrap ad-main">
+        <main class="ad-main">
 
-            <p class="ad-aviso" data-ad-aviso hidden></p>
+            <p class="ad-aviso ad-wrap" data-ad-aviso hidden></p>
 
             <!-- LOGIN -->
             <section class="ad-card ad-login" data-ad-login hidden>
@@ -45,26 +51,46 @@
                     <label>Senha
                         <input type="password" name="senha" autocomplete="current-password" required>
                     </label>
-                    <button type="submit" class="ad-btn">Entrar</button>
+                    <button type="submit" class="ad-btn ad-btn-cheio">Entrar</button>
                     <p class="ad-status" data-ad-login-status role="status"></p>
                 </form>
             </section>
 
             <!-- PAINEL -->
             <section data-ad-painel hidden>
-                <div class="ad-card">
-                    <label>Categoria
-                        <select data-ad-categoria></select>
-                    </label>
-                    <div class="ad-linha-acoes">
-                        <a class="ad-link" data-ad-ver href="#" target="_blank" rel="noopener">Ver página pública ↗</a>
-                        <button type="button" class="ad-btn ad-btn-sec" data-acao="recarregar">Recarregar</button>
-                    </div>
-                    <p class="ad-dica">Preencha o placar e toque em <strong>Salvar</strong> em cada jogo. Os números
-                        aparecem no site em até 30 segundos. Placar em jogos/sets (tênis de mesa), gols (futsal) etc.</p>
-                </div>
 
-                <div data-ad-jogos></div>
+                <nav class="ad-abas" data-ad-abas role="tablist" aria-label="Modalidade"></nav>
+
+                <div class="ad-wrap">
+                    <div class="ad-filtros">
+                        <label class="ad-sel">
+                            <span class="ad-sr">Categoria</span>
+                            <select data-ad-categoria></select>
+                        </label>
+
+                        <div class="ad-info-linha">
+                            <span class="ad-progresso" data-ad-progresso></span>
+                            <span class="ad-icones">
+                                <button type="button" class="ad-icone" data-acao="recarregar" aria-label="Recarregar"
+                                    title="Recarregar">↻</button>
+                                <a class="ad-icone" data-ad-ver href="#" target="_blank" rel="noopener"
+                                    aria-label="Ver página pública" title="Ver página pública">↗</a>
+                                <button type="button" class="ad-icone" data-acao="ajuda" aria-label="Ajuda"
+                                    title="Ajuda">?</button>
+                            </span>
+                        </div>
+                        <div class="ad-barra" aria-hidden="true"><i data-ad-barra></i></div>
+
+                        <p class="ad-ajuda" data-ad-ajuda hidden>
+                            Preencha o placar e toque em <strong>Salvar jogo</strong>. Ele aparece no site em até 30
+                            segundos. Em vôlei, tênis de mesa e pebolim, lance os pontos de cada set/jogo: o placar em
+                            sets é calculado sozinho. Avisos em amarelo são só conferência, não impedem de salvar.
+                        </p>
+                    </div>
+
+                    <div data-ad-resumo></div>
+                    <div data-ad-jogos></div>
+                </div>
             </section>
 
         </main>
