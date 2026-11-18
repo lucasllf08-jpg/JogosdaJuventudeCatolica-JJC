@@ -949,6 +949,7 @@ footer p{
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:24px;
     margin-top:34px;
+    align-items:start;          /* não estica os cards vizinhos quando um é expandido */
 }
 
 .jjc-team-card{
@@ -1705,16 +1706,16 @@ footer p{
 /* ---------------- ABAS (Informações | Equipes) ---------------- */
 
 .jjc-tabs{
-    background:var(--bg-alt);
-    border-bottom:1px solid var(--border);
+    background:transparent;     /* herda o fundo da seção: sem faixa de cor diferente */
+    border:0;
     scroll-margin-top:70px;
 }
 
 .jjc-tabs-inner{
     display:flex;
     gap:12px;
-    padding-top:18px;
-    padding-bottom:18px;
+    padding-top:26px;
+    padding-bottom:0;
 }
 
 .jjc-tab{
@@ -1891,6 +1892,14 @@ footer p{
     font-weight:600;
     color:var(--text);
     justify-content:space-between;
+    outline:none;               /* sem o contorno branco ao clicar com o mouse/toque */
+    -webkit-tap-highlight-color:transparent;
+}
+
+.jjc-atletas summary:focus-visible{   /* continua acessível para quem usa teclado */
+    outline:2px solid var(--secondary);
+    outline-offset:6px;
+    border-radius:6px;
 }
 
 .jjc-atletas summary::after{

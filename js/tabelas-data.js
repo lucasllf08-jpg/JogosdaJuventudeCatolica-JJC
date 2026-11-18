@@ -98,6 +98,7 @@
 
    CAMPOS DE UM JOGO
      data, hora, local  -> opcionais (aparecem se preenchidos)
+     num                -> opcional: número do jogo na tabela oficial (aparece como "Jogo 12")
      a, b               -> as duas equipes (obrigatório)
      placar             -> "3x1" (aceita "3 x 1", "3-1"). Vazio = não jogou.
      penaltis           -> opcional, para mata-mata decidido nos pênaltis: "4x3"
@@ -142,7 +143,9 @@ const JJC_TABELAS_CONFIG = {
     empate: true,
     pontos: { vitoria: 3, empate: 1, derrota: 0 },
     placar: { pro: "GP", contra: "GC", saldo: "SG", legenda: "GP = gols pró · GC = gols contra · SG = saldo de gols" },
-    desempate: ["pontos", "vitorias", "saldo", "pro"]
+    // ordem do Índice Técnico (TABELA_DO_FUTSAL.pdf): pontos, vitórias, saldo de gols,
+    // menos gols contra. Depois: menos vermelhos, menos amarelos e sorteio (use  ordem: [...]  na chave).
+    desempate: ["pontos", "vitorias", "saldo", "contra"]
   },
 
   volei: {
@@ -177,14 +180,200 @@ const JJC_TABELAS_CONFIG = {
    Cada modalidade começa vazia: as categorias aparecem no site como
    "Tabela em breve" até você cadastrar a tabela aqui dentro.
    ------------------------------------------------------------------ */
+/* Local usado nos jogos de futsal (troque aqui para mudar em todos) */
+const JJC_QUADRA = "Quadra Escola Jean Piaget";
+
 const JJC_TABELAS = {
 
   futsal: [
-    // cole aqui as categorias do Futsal
+
+    /* Origem: TABELA_DO_FUTSAL.pdf (coordenadores: Fleukes e Juliano).
+       Todos os jogos: Quadra Escola Jean Piaget. Sáb 21/11 e Dom 22/11,
+       manhã às 8h e tarde às 13h. O número de cada jogo (num) é o da tabela oficial. */
+
+    /* ============ FUTSAL · ADULTO · MASCULINO ============ */
+    {
+      faixa: "adulto",
+      genero: "masculino",
+      observacao: "Fase classificatória em 3 grupos (A, B e C), em turno único. Classificam-se para as semifinais o 1º de cada grupo e o melhor 2º lugar pelo Índice Técnico (nos grupos maiores, são desconsiderados os resultados contra o último colocado de cada grupo).",
+      chaves: [
+        {
+          nome: "Grupo A",
+          classificam: 1,
+          equipes: [
+            "Nossa Senhora Aparecida 3",
+            "Santo Expedito 2",
+            "São Miguel",
+            "São Vicente de Paulo 1"
+          ],
+          jogos: [
+            { num: 10, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Miguel", b: "Santo Expedito 2", placar: "" },
+            { num: 11, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 3", b: "São Vicente de Paulo 1", placar: "" },
+            { num: 17, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 3", b: "São Miguel", placar: "" },
+            { num: 18, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Vicente de Paulo 1", b: "Santo Expedito 2", placar: "" },
+            { num: 22, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Miguel", b: "São Vicente de Paulo 1", placar: "" },
+            { num: 23, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Santo Expedito 2", b: "Nossa Senhora Aparecida 3", placar: "" }
+          ]
+        },
+        {
+          nome: "Grupo B",
+          classificam: 1,
+          equipes: [
+            "Nossa Senhora Aparecida 2",
+            "Santo Expedito 1",
+            "São Bento",
+            "São Paulo"
+          ],
+          jogos: [
+            { num: 13, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Bento", b: "São Paulo", placar: "" },
+            { num: 14, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "Santo Expedito 1", placar: "" },
+            { num: 19, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "São Bento", placar: "" },
+            { num: 20, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "São Paulo", placar: "" },
+            { num: 24, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Bento", b: "Santo Expedito 1", placar: "" },
+            { num: 25, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Paulo", b: "Nossa Senhora Aparecida 2", placar: "" }
+          ]
+        },
+        {
+          nome: "Grupo C",
+          classificam: 1,
+          equipes: [
+            "Nossa Senhora Aparecida 1",
+            "Nossa Senhora Aparecida 4",
+            "São Vicente de Paulo 2"
+          ],
+          jogos: [
+            { num: 15, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Vicente de Paulo 2", b: "Nossa Senhora Aparecida 1", placar: "" },
+            { num: 21, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Vicente de Paulo 2", b: "Nossa Senhora Aparecida 4", placar: "" },
+            { num: 26, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 4", b: "Nossa Senhora Aparecida 1", placar: "" }
+          ]
+        }
+      ],
+      fasesFinais: [
+        { fase: "Semifinais", jogos: [
+          { num: 27, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º Grupo A", b: "2º Gr. B ou C / 1º Gr. C", placar: "", obs: "Melhor 2º lugar pelo Índice Técnico" },
+          { num: 28, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º Grupo B", b: "1º Gr. C ou 2º Gr. A", placar: "", obs: "Melhor 2º lugar pelo Índice Técnico" }
+        ]},
+        { fase: "Final", jogos: [
+          { num: 32, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "Vencedor do Jogo 27", b: "Vencedor do Jogo 28", placar: "", penaltis: "" }
+        ]}
+      ]
+    },
+
+    /* ============ FUTSAL · JUVENIL · MASCULINO ============ */
+    {
+      faixa: "juvenil",
+      genero: "masculino",
+      observacao: "Grupo único, todos contra todos. Classificam-se para a final o 1º e o 2º lugar do grupo.",
+      chaves: [
+        {
+          classificam: 2,
+          equipes: [
+            "Nossa Senhora Aparecida 1",
+            "Nossa Senhora Aparecida 2",
+            "Santo Expedito",
+            "São Bento"
+          ],
+          jogos: [
+            { num: 2, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "São Bento", b: "Nossa Senhora Aparecida 1", placar: "" },
+            { num: 3, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "Santo Expedito", placar: "" },
+            { num: 5, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "São Bento", placar: "" },
+            { num: 6, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Santo Expedito", b: "Nossa Senhora Aparecida 1", placar: "" },
+            { num: 8, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "São Bento", b: "Santo Expedito", placar: "" },
+            { num: 9, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 1", b: "Nossa Senhora Aparecida 2", placar: "" }
+          ]
+        }
+      ],
+      fasesFinais: [
+        { fase: "Final", jogos: [
+          { num: 31, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º colocado", b: "2º colocado", placar: "", penaltis: "" }
+        ]}
+      ]
+    },
+
+    /* ============ FUTSAL · INFANTIL · MASCULINO ============ */
+    {
+      faixa: "infantil",
+      genero: "masculino",
+      observacao: "Grupo único, todos contra todos. Classificam-se para a final o 1º e o 2º lugar do grupo.",
+      chaves: [
+        {
+          classificam: 2,
+          equipes: [
+            "Nossa Senhora Aparecida 1",
+            "Nossa Senhora Aparecida 2",
+            "Santo Expedito"
+          ],
+          jogos: [
+            { num: 1, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "Nossa Senhora Aparecida 1", placar: "" },
+            { num: 4, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "Santo Expedito", placar: "" },
+            { num: 7, data: "Sáb 21/11", hora: "8h", local: JJC_QUADRA, a: "Santo Expedito", b: "Nossa Senhora Aparecida 1", placar: "" }
+          ]
+        }
+      ],
+      fasesFinais: [
+        { fase: "Final", jogos: [
+          { num: 30, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º colocado", b: "2º colocado", placar: "", penaltis: "" }
+        ]}
+      ]
+    },
+
+    /* ============ FUTSAL · ADULTO · FEMININO ============ */
+    {
+      faixa: "adulto",
+      genero: "feminino",
+      observacao: "Duas equipes: os Jogos 12 e 16 são as duas primeiras partidas. O Jogo 29, considerado partida final, só será realizado se necessário.",
+      chaves: [
+        {
+          equipes: [
+            "Santo Expedito 1",
+            "Santo Expedito 2"
+          ],
+          jogos: [
+            { num: 12, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "" },
+            { num: 16, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "" }
+          ]
+        }
+      ],
+      fasesFinais: [
+        { fase: "Final", jogos: [
+          { num: 29, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "", penaltis: "", obs: "Só será realizado se necessário" }
+        ]}
+      ]
+    }
+
   ],
 
   volei: [
-    // cole aqui as categorias do Vôlei
+
+    /* ============ VÔLEI · ADULTO · FEMININO ============
+       Chave única, todos contra todos (3 jogos por equipe, 6 jogos no total).
+       Origem: tabela_torneio_voleibol_chave_unica.pdf. Sem data/hora/local na tabela:
+       acrescente em cada jogo quando a organização definir (data, hora, local).
+       Placar em SETS: ex.  "2x1"  (no painel, lance os pontos de cada set). */
+    {
+      faixa: "adulto",
+      genero: "feminino",
+      observacao: "Chave única, todos contra todos: cada equipe disputa 3 partidas (6 jogos no total). A classificação final define as colocações.",
+      chaves: [
+        {
+          equipes: [
+            "Nossa Senhora Aparecida 1",
+            "Nossa Senhora Aparecida 2",
+            "São Bento",
+            "São Vicente de Paulo"
+          ],
+          jogos: [
+            { rodada: 1, num: 1, a: "Nossa Senhora Aparecida 1", b: "São Vicente de Paulo", placar: "" },
+            { rodada: 1, num: 2, a: "Nossa Senhora Aparecida 2", b: "São Bento", placar: "" },
+            { rodada: 2, num: 3, a: "Nossa Senhora Aparecida 1", b: "São Bento", placar: "" },
+            { rodada: 2, num: 4, a: "São Vicente de Paulo", b: "Nossa Senhora Aparecida 2", placar: "" },
+            { rodada: 3, num: 5, a: "Nossa Senhora Aparecida 1", b: "Nossa Senhora Aparecida 2", placar: "" },
+            { rodada: 3, num: 6, a: "São Bento", b: "São Vicente de Paulo", placar: "" }
+          ]
+        }
+      ]
+    }
+
   ],
 
   queimada: [

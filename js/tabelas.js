@@ -340,7 +340,7 @@
         if (p.a > p.b) venceA = true; else if (p.b > p.a) venceB = true;
         else if (pen) { if (pen.a > pen.b) venceA = true; else if (pen.b > pen.a) venceB = true; }
       }
-      const info = [j.data, j.hora, j.local].filter(Boolean).map(esc).join(" · ");
+      const info = [placarPreenchido(j.num) ? `Jogo ${j.num}` : "", j.data, j.hora, j.local].filter(Boolean).map(esc).join(" · ");
       const obs = [pen ? `Pênaltis: ${pen.a} × ${pen.b}` : "", j.obs || ""].filter(Boolean).map(esc).join(" · ");
       const cartoes = (Array.isArray(j.cartoes) ? j.cartoes : []).filter(c => c && c.atleta).map(c => {
         const vermelho = String(c.tipo || "").toLowerCase().startsWith("verm");

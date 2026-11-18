@@ -358,7 +358,7 @@
     defs[id] = { a: nomeA, b: nomeB, est: j.placar || "" };
 
     const infoTxt = [
-      (j.rodada !== undefined && j.rodada !== "" ? (/^\d+$/.test(String(j.rodada)) ? `Jogo ${esc(String(j.rodada))}` : esc(j.rodada)) : ""),
+      (j.num !== undefined && j.num !== "" ? `Jogo ${esc(String(j.num))}` : ""),
       esc(valor(j, r, "data")), esc(valor(j, r, "hora")), P.local ? esc(valor(j, r, "local")) : ""
     ].filter(Boolean).join(" · ");
 

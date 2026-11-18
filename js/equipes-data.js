@@ -273,13 +273,11 @@ const JJC_EQUIPES = [
     numero: 1,
     atletas: [
       "Pedro Jorge de Souza Conradi",
-      "Luiz Henrique Garcia da Silva",
       "Gabriel Felix Souza",
-      "Victor de Almeida Fernandes",
-      "João Pedro de Castro",
       "Vitor Daniel Oliveira da Costa",
-      "Luiz Antonio Rodrigues Xavier",
-      "Pablo Henrique Gomes da Silva"
+      "Pablo Henrique Gomes da Silva",
+      "Rhuan Kruger do Carmo",
+      "Heitor Senhorinha Costa"
     ]
   },
   {
@@ -342,7 +340,8 @@ const JJC_EQUIPES = [
       "Carlos A. Almeida Campos",
       "Rafael Trivilin",
       "Alvaro Clistenes da F. Coelho",
-      "Sérgio dos Santos"
+      "Sérgio dos Santos",
+      "Gabriel Alves Rodrigues"
     ]
   },
   {
@@ -357,7 +356,8 @@ const JJC_EQUIPES = [
       "Dione Padilha",
       "Flabson dos Santos Luz",
       "João Filipe G. Melhorança",
-      "David Alex Souza da Veiga"
+      "David Alex Souza da Veiga",
+      "Jorge Luiz Barbosa Habitzreuter"
     ]
   },
   {
@@ -444,12 +444,12 @@ const JJC_EQUIPES = [
     setor: "Setor 1 — Matriz e São Francisco",
     numero: 1,
     atletas: [
-      "Evelyn Gabriela Silva Queiroz",
       "Samantha Candido M. da Silva",
       "Maria Eduarda S. Miranda",
       "Kamilly Guarnier da Silva",
-      "Talita Schimidt Ramos da Silva",
-      "Ana Carolina Marinho da Cruz"
+      "Ana Carolina Marinho da Cruz",
+      "Pyetra Panaro",
+      "Emilly Mayara Rodrigues Raasch"
     ]
   },
   {
