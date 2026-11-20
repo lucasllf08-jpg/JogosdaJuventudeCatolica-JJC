@@ -31,58 +31,80 @@ const JJC_FAIXAS = {
   futsal: {
     contagem: "equipes",
     faixas: [
-      { id: "infantil", nome: "Infantil", idade: "10 a 14 anos",
-        grupos: [ { genero: "masculino" } ] },
-      { id: "juvenil", nome: "Juvenil", idade: "15 a 17 anos",
-        grupos: [ { genero: "masculino" } ] },
-      { id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
-        grupos: [ { genero: "masculino" }, { genero: "feminino", obs: "Mais de 17 anos" } ] }
+      {
+        id: "infantil", nome: "Infantil", idade: "10 a 14 anos",
+        grupos: [{ genero: "masculino" }]
+      },
+      {
+        id: "juvenil", nome: "Juvenil", idade: "15 a 17 anos",
+        grupos: [{ genero: "masculino" }]
+      },
+      {
+        id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
+        grupos: [{ genero: "masculino" }, { genero: "feminino", obs: "Mais de 17 anos" }]
+      }
     ]
   },
 
   volei: {
     contagem: "equipes",
     faixas: [
-      { id: "juvenil", nome: "Juvenil", idade: "13 a 17 anos",
-        grupos: [ { genero: "masculino", obs: "Areia" }, { genero: "feminino", obs: "Quadra" } ] },
-      { id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
-        grupos: [ { genero: "masculino", obs: "Areia" }, { genero: "feminino", obs: "Quadra" } ] }
+      {
+        id: "juvenil", nome: "Juvenil", idade: "13 a 17 anos",
+        grupos: [{ genero: "masculino", obs: "Areia" }, { genero: "feminino", obs: "Quadra" }]
+      },
+      {
+        id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
+        grupos: [{ genero: "masculino", obs: "Areia" }, { genero: "feminino", obs: "Quadra" }]
+      }
     ]
   },
 
   queimada: {
     contagem: "equipes",
     faixas: [
-      { id: "infantil", nome: "Infantil", idade: "10 a 14 anos",
-        grupos: [ { genero: "misto" } ] },
-      { id: "juvenil", nome: "Juvenil", idade: "15 a 17 anos",
-        grupos: [ { genero: "misto" } ] },
-      { id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
-        grupos: [ { genero: "misto" } ] }
+      {
+        id: "infantil", nome: "Infantil", idade: "10 a 14 anos",
+        grupos: [{ genero: "misto" }]
+      },
+      {
+        id: "juvenil", nome: "Juvenil", idade: "15 a 17 anos",
+        grupos: [{ genero: "misto" }]
+      },
+      {
+        id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
+        grupos: [{ genero: "misto" }]
+      }
     ]
   },
 
   mesa: {
     contagem: "atletas",
     faixas: [
-      { id: "infantil", nome: "Infantil", idade: "10 a 14 anos",
+      {
+        id: "infantil", nome: "Infantil", idade: "10 a 14 anos",
         grupos: [
           { jogo: "tenis-de-mesa", genero: "masculino" },
           { jogo: "tenis-de-mesa", genero: "feminino" },
           { jogo: "pebolim", genero: "masculino" }
-        ] },
-      { id: "juvenil", nome: "Juvenil", idade: "15 a 17 anos",
+        ]
+      },
+      {
+        id: "juvenil", nome: "Juvenil", idade: "15 a 17 anos",
         grupos: [
           { jogo: "tenis-de-mesa", genero: "masculino" },
           { jogo: "tenis-de-mesa", genero: "feminino" },
           { jogo: "pebolim", genero: "masculino" }
-        ] },
-      { id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
+        ]
+      },
+      {
+        id: "adulto", nome: "Adulto", idade: "A partir de 18 anos",
         grupos: [
           { jogo: "tenis-de-mesa", genero: "masculino" },
           { jogo: "tenis-de-mesa", genero: "feminino" },
           { jogo: "pebolim", genero: "masculino" }
-        ] }
+        ]
+      }
     ]
   }
 
@@ -195,7 +217,8 @@ const JJC_EQUIPES = [
       "Valdeci Lara",
       "Henrique Nogueira",
       "Luiz Henrique",
-      "Antonio Fernando"
+      "Antonio Fernando",
+      "Kauan Seconeli"
     ]
   },
   {
@@ -222,14 +245,14 @@ const JJC_EQUIPES = [
     setor: "Setor 3 — São José, Sagrada e Nazaré",
     numero: null,
     atletas: [
-      "Poliana Porto",
-      "Jomaci Bausen",
-      "Tatiane Lara",
-      "Leticia Prasser",
-      "Ana Julia",
-      "Isabella Prasser",
-      "Eduarda Lara",
-      "Larissa Trivilin"
+      "Inês",
+      "Luzia",
+      "Irani",
+      "Simone",
+      "Joana",
+      "Danielly",
+      "Vânia",
+      "Ana Paula"
     ]
   },
   {
@@ -468,7 +491,7 @@ const JJC_EQUIPES = [
     ]
   },
   {
-    modalidade: "mesa", jogo: "tenis-de-mesa", genero: "masculino", faixa: "juvenil",
+    modalidade: "mesa", jogo: "tenis-de-mesa", genero: "masculino", faixa: "adulto",
     comunidade: "Nossa Senhora Aparecida",
     setor: "Setor 1 — Matriz e São Francisco",
     numero: null,
