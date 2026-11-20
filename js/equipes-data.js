@@ -383,21 +383,7 @@ const JJC_EQUIPES = [
       "Jorge Luiz Barbosa Habitzreuter"
     ]
   },
-  {
-    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
-    comunidade: "Nossa Senhora Aparecida",
-    setor: "Setor 1 — Matriz e São Francisco",
-    numero: 3,
-    atletas: [
-      "Aquiles Gonçalves Moreira",
-      "Hadryan Anarias dos S. Camargo",
-      "João Victor Gonçalves Fonseca",
-      "Gustavo Teixeira de Souza",
-      "Handrey Lucas S. Camargo",
-      "Eduardo Roberto dos Santos"
-    ]
-  },
-  {
+{
     modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
     comunidade: "Nossa Senhora Aparecida",
     setor: "Setor 1 — Matriz e São Francisco",
