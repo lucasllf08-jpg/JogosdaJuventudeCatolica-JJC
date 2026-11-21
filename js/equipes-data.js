@@ -267,6 +267,13 @@ const JJC_EQUIPES = [
   },
   {
     modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
+    comunidade: "São Francisco",
+    setor: "Setor 1 — Matriz e São Francisco",
+    numero: null,
+    atletas: []   // atletas a confirmar
+  },
+  {
+    modalidade: "futsal", jogo: null, genero: "masculino", faixa: "adulto",
     comunidade: "São Miguel",
     setor: "Rio Preto, PA e Seringal",
     numero: 1,

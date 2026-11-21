@@ -1913,6 +1913,15 @@ footer p{
     transform:rotate(45deg);
 }
 
+.jjc-atletas-vazio{
+    margin:2px 0 0;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+    font-size:.9rem;
+    font-style:italic;
+    color:var(--text-muted);
+}
+
 .jjc-atletas-lista{
     margin:12px 0 0;
     padding-left:22px;

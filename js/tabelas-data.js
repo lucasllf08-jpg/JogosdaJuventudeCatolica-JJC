@@ -187,7 +187,7 @@ const JJC_TABELAS = {
 
   futsal: [
 
-    /* Origem: TABELA_DO_FUTSAL_2.pdf (coordenadores: Fleukes e Juliano).
+    /* Origem: TABELA_ATUALIZADA.pdf (coordenadores: Fleukes e Juliano).
        Todos os jogos: Quadra Escola Jean Piaget. Sáb 21/11 e Dom 22/11,
        manhã às 8h e tarde às 13h. O número de cada jogo (num) é o da tabela oficial. */
 
@@ -201,14 +201,18 @@ const JJC_TABELAS = {
           nome: "Grupo A",
           classificam: 1,
           equipes: [
-            "Santo Expedito 2",
+            "São Francisco",
             "São Miguel",
-            "São Vicente de Paulo 1"
+            "São Vicente de Paulo 1",
+            "Santo Expedito 2"
           ],
           jogos: [
             { num: 10, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Miguel", b: "Santo Expedito 2", placar: "" },
-            { num: 15, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Vicente de Paulo 1", b: "Santo Expedito 2", placar: "" },
-            { num: 21, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Miguel", b: "São Vicente de Paulo 1", placar: "" }
+            { num: 11, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Francisco", b: "São Vicente de Paulo 1", placar: "" },
+            { num: 16, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Francisco", b: "Santo Expedito 2", placar: "" },
+            { num: 20, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Miguel", b: "São Vicente de Paulo 1", placar: "" },
+            { num: 24, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Vicente de Paulo 1", b: "Santo Expedito 2", placar: "" },
+            { num: 25, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Francisco", b: "São Miguel", placar: "" }
           ]
         },
         {
@@ -221,12 +225,12 @@ const JJC_TABELAS = {
             "São Paulo"
           ],
           jogos: [
-            { num: 11, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Bento", b: "São Paulo", placar: "" },
+            { num: 12, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Bento", b: "São Paulo", placar: "" },
             { num: 13, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "Santo Expedito 1", placar: "" },
             { num: 17, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 2", b: "São Bento", placar: "" },
-            { num: 20, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "São Paulo", placar: "" },
-            { num: 22, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Bento", b: "Santo Expedito 1", placar: "" },
-            { num: 23, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Paulo", b: "Nossa Senhora Aparecida 2", placar: "" }
+            { num: 18, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "São Paulo", placar: "" },
+            { num: 21, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Bento", b: "Santo Expedito 1", placar: "" },
+            { num: 22, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Paulo", b: "Nossa Senhora Aparecida 2", placar: "" }
           ]
         },
         {
@@ -238,19 +242,19 @@ const JJC_TABELAS = {
             "São Vicente de Paulo 2"
           ],
           jogos: [
-            { num: 14, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Vicente de Paulo 2", b: "Nossa Senhora Aparecida 4", placar: "" },
+            { num: 15, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "São Vicente de Paulo 2", b: "Nossa Senhora Aparecida 4", placar: "" },
             { num: 19, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "São Vicente de Paulo 2", b: "Nossa Senhora Aparecida 1", placar: "" },
-            { num: 24, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 4", b: "Nossa Senhora Aparecida 1", placar: "" }
+            { num: 26, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Nossa Senhora Aparecida 4", b: "Nossa Senhora Aparecida 1", placar: "" }
           ]
         }
       ],
       fasesFinais: [
         { fase: "Semifinais", jogos: [
-          { num: 25, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º Grupo A", b: "2º Gr. B ou C / 1º Gr. C", placar: "", obs: "Melhor 2º lugar pelo Índice Técnico" },
-          { num: 26, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º Grupo B", b: "1º Gr. C ou 2º Gr. A", placar: "", obs: "Melhor 2º lugar pelo Índice Técnico" }
+          { num: 27, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º Grupo A", b: "2º Gr. B ou C / 1º Gr. C", placar: "", obs: "Melhor 2º lugar pelo Índice Técnico" },
+          { num: 28, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º Grupo B", b: "1º Gr. C ou 2º Gr. A", placar: "", obs: "Melhor 2º lugar pelo Índice Técnico" }
         ]},
         { fase: "Final", jogos: [
-          { num: 30, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "Vencedor do Jogo 25", b: "Vencedor do Jogo 26", placar: "", penaltis: "" }
+          { num: 32, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "Vencedor do Jogo 27", b: "Vencedor do Jogo 28", placar: "", penaltis: "" }
         ]}
       ]
     },
@@ -281,7 +285,7 @@ const JJC_TABELAS = {
       ],
       fasesFinais: [
         { fase: "Final", jogos: [
-          { num: 29, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º colocado", b: "2º colocado", placar: "", penaltis: "" }
+          { num: 31, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º colocado", b: "2º colocado", placar: "", penaltis: "" }
         ]}
       ]
     },
@@ -308,7 +312,7 @@ const JJC_TABELAS = {
       ],
       fasesFinais: [
         { fase: "Final", jogos: [
-          { num: 28, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º colocado", b: "2º colocado", placar: "", penaltis: "" }
+          { num: 30, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "1º colocado", b: "2º colocado", placar: "", penaltis: "" }
         ]}
       ]
     },
@@ -317,7 +321,7 @@ const JJC_TABELAS = {
     {
       faixa: "adulto",
       genero: "feminino",
-      observacao: "Duas equipes: os Jogos 12 e 16 são as duas primeiras partidas. O Jogo 27, considerado partida final, só será realizado se necessário.",
+      observacao: "Duas equipes: os Jogos 14 e 23 são as duas primeiras partidas. O Jogo 29, considerado partida final, só será realizado se necessário.",
       chaves: [
         {
           equipes: [
@@ -325,14 +329,14 @@ const JJC_TABELAS = {
             "Santo Expedito 2"
           ],
           jogos: [
-            { num: 12, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "" },
-            { num: 16, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "" }
+            { num: 14, data: "Sáb 21/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "" },
+            { num: 23, data: "Dom 22/11", hora: "8h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "" }
           ]
         }
       ],
       fasesFinais: [
         { fase: "Final", jogos: [
-          { num: 27, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "", penaltis: "", obs: "Só será realizado se necessário" }
+          { num: 29, data: "Dom 22/11", hora: "13h", local: JJC_QUADRA, a: "Santo Expedito 1", b: "Santo Expedito 2", placar: "", penaltis: "", obs: "Só será realizado se necessário" }
         ]}
       ]
     }

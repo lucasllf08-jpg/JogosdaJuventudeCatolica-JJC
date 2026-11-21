@@ -684,12 +684,13 @@ function cardTime(eq, contagem) {
     <article class="jjc-team-card">
       <h3>${escapeHtml(nome)}</h3>
       <p class="jjc-team-comunidade">${escapeHtml(eq.setor)}</p>
+      ${qtd === 0 ? `<p class="jjc-atletas-vazio">Atletas a confirmar</p>` : `
       <details class="jjc-atletas" ${contagem === "atletas" ? "open" : ""}>
         <summary>${rotulo}</summary>
         <ol class="jjc-atletas-lista">
           ${eq.atletas.map(n => `<li>${escapeHtml(n)}</li>`).join("")}
         </ol>
-      </details>
+      </details>`}
     </article>`;
 }
 
